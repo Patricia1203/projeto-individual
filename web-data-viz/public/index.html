@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Universo League of Legends</title>
+</head>
+
+<body>
+    <header id="nav-bar">
+        <section class="box-nav logo-container">
+            <img src="img/logo-league.png" alt="" class="logo-league">
+        </section>
+        <section class="box-nav nav-links-container">
+    <nav>
+        <ul class="box-nav row nav-links">
+            <li class="box"><a href="index.html" class="link box active">Home</a></li>
+            <li class="box"><a href="#" class="link box">Campeãs</a></li>
+            <li class="box"><a href="#" class="link box">Quiz</a></li>
+        </ul>
+        <ul class="box-nav row nav-buttons">
+            <li class="box nav-button-box"><a href="login_cad.html?mode=login" class="link nav-button login">Login</a></li>
+            <li class="box nav-button-box"><a href="login_cad.html?mode=cadastro" class="link nav-button regist">Cadastro</a></li>
+        </ul>
+    </nav>
+</section>
+        <section class="box-nav hamburger-container">
+            <label class="hamburger">
+                <input type="checkbox" id="hamburger-checkbox">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom"
+                        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+                    </path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+        </section>
+    </header>
+    <div class="card-img">
+        <div class="slide-overlay">
+            <h1>Explore Runeterra</h1>
+            <p>Invocador, desafie-se com quizzes épicos. Cadastre-se e mostre do que é capaz!</p>
+            <button class="button-slide"><a href="login_cad.html?mode=cadastro">Cadastre-se</a></button>
+        </div>
+        <div class="imagens">
+            <!-- Imagem Retirada o Site Oficial: https://www.leagueoflegends.com/pt-br/champions/missfortune/ -->
+            <img src="img/miss-fortune.jpg" alt="" class="active">
+
+            <!-- Imagem Retirada o Site Oficial: https://www.leagueoflegends.com/pt-br/champions/ashe/ -->
+            <img src="img/ashe.jpg" alt="" class="img-slide">
+
+            <!-- Imagem Retirada o Site Oficial: https://www.leagueoflegends.com/pt-br/champions/syndra/ -->
+            <img src="img/malphite.jpg" alt="" class="img-slide syndra">
+
+            <!-- Imagem Retirada o Site Oficial: https://www.leagueoflegends.com/pt-br/champions/annie/ -->
+            <img src="img/annie.jpg" alt="" class="img-slide">
+
+            <!-- Imagem Retirada o Site Oficial: https://www.leagueoflegends.com/pt-br/champions/lux/ -->
+            <img src="img/lux.jpg" alt="" class="img-slide lux">
+
+            <!-- Imagem Retirada o Site Oficial: https://www.leagueoflegends.com/pt-br/champions/lux/ -->
+            <img src="img/fiddlesticks.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="background-cards">
+        <h2 class="title section-title">Conheça Alguns Campeões</h2>
+        <div class="cards-respons">
+            <section class="card-respons miss">
+                <div class="icone">
+                    <img src="img/miss-fortune.jpg" alt="">
+                </div>
+                <div class="region-tag sentina">Águas de Sentina</div>
+                <h3>Miss Fortune</h3>
+                <span>Capitã de Águas de Sentina e caçadora de recompensas temida por sua astúcia implacável.</span>
+                <div class="function miss-color">Função</div>
+                <div class="role">Atirador</div>
+                <button>Learn More</button>
+            </section>
+            <section class="card-respons voli">
+                <div class="icone">
+                    <img src="img/volibear.jpg" alt="">
+                </div>
+                <div class="region-tag freljord">Freljord</div>
+                <h3>Volibear</h3>
+                <span>Volibear é um antigo deus-urso guerreiro de Freljord, que personifica a fúria da tempestade e luta
+                    para preservar as antigas tradições de sua terra.</span>
+                <div class="function voli-color">Função</div>
+                <div class="role">Lutador/Tanque</div>
+                <button>Learn More</button>
+            </section>
+            <section class="card-respons ash">
+                <div class="icone">
+                    <img src="img/ashe.jpg" alt="">
+                </div>
+                <div class="region-tag freljord">Freljord</div>
+                <h3>Ashe</h3>
+                <span>Líder guerreira da tribo Avarosa, busca unir o povo de Freljord.</span>
+                <div class="function ash-color">Função</div>
+                <div class="role">Atirador</div>
+                <button>Learn More</button>
+            </section>
+            <section class="card-respons swain">
+                <div class="icone">
+                    <img src="img/swain.jpg" alt="">
+                </div>
+                <div class="region-tag noxus">Noxus</div>
+                <h3>Swain</h3>
+                <span>Jericho Swain é o líder visionário de Noxus que fez um pacto com um demônio, ganhando poderes
+                    sobrenaturais e uma visão estratégica inigualável.</span>
+                <div class="function swain-color">Função</div>
+                <div class="role">Mago/Suporte</div>
+                <button>Learn More</button>
+            </section>
+            <section class="card-respons syn">
+                <div class="icone">
+                    <img src="img/syndra.jpg" alt="">
+                </div>
+                <div class="region-tag ionia">Ionia</div>
+                <h3>Syndra</h3>
+                <span>Maga poderosa de Ionia com controle sobre esferas mágicas e sede por poder ilimitado.</span>
+                <div class="function syn-color">Função</div>
+                <div class="role">Maga</div>
+                <button>Learn More</button>
+            </section>
+            <section class="card-respons malp">
+                <div class="icone">
+                    <img src="img/malphite.jpg" alt="">
+                </div>
+                <div class="region-tag shurima">Shurima</div>
+                <h3>Malphite</h3>
+                <span>Malphite é um colosso de pedra viva, um fragmento de um monolito mágico que busca restaurar a
+                    ordem em um mundo caótico</span>
+                <div class="function malp-color">Função</div>
+                <div class="role">Tanque</div>
+                <button>Learn More</button>
+            </section>
+            <section class="card-respons ann">
+                <div class="icone">
+                    <img src="img/annie.jpg" alt="">
+                </div>
+                <div class="region-tag noxus">Noxus</div>
+                <h3>Annie</h3>
+                <span>Jovem maga com poderes piromaníacos e seu inseparável urso de pelúcia, Tibbers.</span>
+                <div class="function ann-color">Função</div>
+                <div class="role">Maga</div>
+                <button>Learn More</button>
+            </section>
+            <section class="card-respons fid">
+                <div class="icone">
+                    <img src="img/fiddlesticks.jpg" alt="">
+                </div>
+                <div class="region-tag runeterra">Runeterra</div>
+                <h3>FidleStick</h3>
+                <span>Fiddlesticks é um demônio primordial que personifica o medo, vagando por Runeterra como um
+                    espantalho animado que se alimenta do terror de suas vítimas.</span>
+                <div class="function fid-color">Função</div>
+                <div class="role">Mago</div>
+                <button>Learn More</button>
+            </section>
+            <section class="card-respons lux">
+                <div class="icone">
+                    <img src="img/lux.jpg" alt="">
+                </div>
+                <div class="region-tag demacia">Demacia</div>
+                <h3>Lux</h3>
+                <span>Maga nascida em Demacia que esconde seus poderes em uma sociedade que teme a magia.</span>
+                <div class="function lux-color">Função</div>
+                <div class="role">Maga</div>
+                <button>Learn More</button>
+            </section>
+            <section class="card-respons ser">
+                <div class="icone">
+                    <img src="img/seraphine.jpg" alt="">
+                </div>
+                <div class="region-tag piltover">Piltover</div>
+                <h3>Seraphine</h3>
+                <span>Jovem artista de Piltover & Zaun que usa sua música para unir pessoas e inspirar harmonia.</span>
+                <div class="function ser-color">Função</div>
+                <div class="role">Maga/Suporte</div>
+                <button>Learn More</button>
+            </section>
+        </div>
+    </div>
+
+    <div class="container-history">
+        <h2 class="title history section-title">O Universo de League of Legends</h2>
+        <div class="container-box">
+            <div class="content-block-1">
+                <div class="runeterra">
+                    <h3 class="title rune">Runeterra</h3>
+                    <span class="text-history">Runeterra é um mundo vasto e mágico, composto por continentes e mares
+                        repletos de magia antiga e civilizações diversas. Cada região possui sua própria cultura,
+                        crenças e
+                        conflitos.</span>
+                </div>
+                <div class="box-phrase miss">
+                    <span class="text-frase miss-color">"Águas de Sentina pode ser perigosa, mas é o único lugar onde
+                        realmente
+                        me sinto em casa."</span>
+                    <span class="text-autor">— Miss Fortune</span>
+                </div>
+                <div class="box-phrase ash">
+                    <span class="text-frase ash-color">"Freljord não é apenas gelo e neve. É o lar de um povo forte e
+                        resiliente."</span>
+                    <span class="text-autor">— Ashe</span>
+                </div>
+                <div class="box-phrase ser">
+                    <span class="text-frase ser-color">"Cada voz importa. Juntas, podemos criar algo mais bonito do que
+                        qualquer uma poderia sozinha."</span>
+                    <span class="text-autor">— Seraphine</span>
+                </div>
+                <div>
+                    <h3 class="title-rune">A Magia De Runeterra</h3>
+                    <span class="text-history">A magia flui por toda Runeterra, manifestando-se de formas diferentes em
+                        cada
+                        região. Enquanto alguns a celebram e estudam, outros a temem e perseguem. Os conflitos entre
+                        estas
+                        visões moldam grande parte da história do mundo.</span>
+                </div>
+                <div>
+                    <h3 class="title-rune">As Guerras Rúnicas</h3>
+                    <span class="text-history">Há milênios, magos poderosos travaram guerras devastadoras usando runas
+                        arcanas, alterando para sempre a geografia e a magia de Runeterra. As consequências dessas
+                        guerras
+                        ainda ecoam no presente.</span>
+                </div>
+            </div>
+            <div class="content-block-2">
+                <div class="timeline-history-container">
+                    <div class="timeline-container">
+                        <div class="box-timeline-decorator bottom one"></div>
+                        <div class="box-timeline-decorator bottom two"></div>
+                        <div class="container-timeline-content">
+                            <h2 class="title timeline">Linha Do Tempo</h2>
+                            <div class="box-period">
+                                <h3 class="title-period">Era Antiga</h3>
+                                <span class="box-text-period one">
+                                    <span class="text-period">Surgimento das primeiras civilizações e dos seres
+                                        celestiais. Os Aspectos de Targon começam a influenciar o mundo mortal.</span>
+                                </span>
+                            </div>
+                            <div class="box-period">
+                                <h3 class="title-period">Guerras Rúnicas</h3>
+                                <span class="box-text-period two">
+                                    <span class="text-period">Conflito devastador que remodelou continentes e alterou o
+                                        fluxo de magia em Runeterra.
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="box-period">
+                                <h3 class="title-period">Fundação De Demacia</h3>
+                                <span class="box-text-period three">
+                                    <span class="text-period">Refugiados das Guerras Rúnicas estabelecem um reino
+                                        baseado na ordem e na proteção contra a magia.</span>
+                                </span>
+                            </div>
+                            <div class="box-period">
+                                <h3 class="title-period">Ascensão De Noxus</h3>
+                                <span class="box-text-period four">
+                                    <span class="text-period">O império expansionista começa suas conquistas,
+                                        valorizando força e mérito acima de tudo.</span>
+                                </span>
+                            </div>
+                            <div class="box-period">
+                                <h3 class="title-period">Descoberta Hextech</h3>
+                                <span class="box-text-period five">
+                                    <span class="text-period">Piltover desenvolve a tecnologia hextech, combinando magia
+                                        e ciência, transformando a sociedade moderna.</span>
+                                </span>
+                            </div>
+                            <div class="box-period">
+                                <h3 class="title-period">Era Atual</h3>
+                                <span class="box-text-period six">
+                                    <span class="text-period">Período de tensões crescentes entre as nações, enquanto
+                                        antigas ameaças despertam e novas alianças se formam.</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fundo-cards regions-background">
+        <h2 class="title section-title">Regiões de Runeterra</h2>
+        <div class="cards-respons regions">
+            <section class="card-respons regions demacia">
+                <div class="icone-cards-regions demacia-bg">
+                    <img src="img/demacia.webp" alt="">
+                </div>
+                <h3>Demacia</h3>
+                <div class="info-regions demacia-color">Reino de Justiça e Honra</div>
+                <button>Learn More</button>
+            </section>
+            <section class="card-respons regions noxus">
+                <div class="icone-cards-regions noxus-bg">
+                    <img src="img/noxus.webp" alt="">
+                </div>
+                <h3>Noxus</h3>
+                <div class="info-regions noxus-color">Império da Força e Ambição</div>
+                <button>Learn More</button>
+            </section>
+            <section class="card-respons regions ionia">
+                <div class="icone-cards-regions ionia-bg">
+                    <img src="img/ionia.webp" alt="">
+                </div>
+                <h3>Ionia</h3>
+                <div class="info-regions ionia-color">Terra da Magia e Harmonia</div>
+                <button>Learn More</button>
+            </section>
+            <section class="card-respons regions freljord">
+                <div class="icone-cards-regions freljord-bg">
+                    <img src="img/freljord.webp" alt="">
+                </div>
+                <h3><b>Freljord</b></h3>
+                <div class="info-regions freljord-color">Reino do Gelo e Guerra</div>
+                <button>Learn More</button>
+            </section>
+            <section class="card-respons regions sentina">
+                <div class="icone-cards-regions sentina-bg">
+                    <img src="img/aguas-de-sentina.jpg" alt="">
+                </div>
+                <h3>Águas de Sentina</h3>
+                <div class="info-regions sentina-color">Porto de Piratas e Caçadores</div>
+                <button>Learn More</button>
+            </section>
+            <section class="card-respons regions pi-za">
+                <div class="icone-cards-regions pi-za-bg">
+                    <img src="img/piltover-zaun.webp" alt="">
+                </div>
+                <h3>Piltover & Zaun</h3>
+                <div class="info-regions pi-za-color">Cidades da Inovação e Caos</div>
+                <button>Learn More</button>
+            </section>
+        </div>
+    </div>
+    <footer>
+        <div class="footer_content">
+            <div id="footer_contacts">
+                <h1>Patricia Batista Borges</h1>
+                <p>“Às vezes você precisa ser valente e acreditar que pode mudar o seu destino.”</p>
+                <p> — Valente</p>
+                <div id="footer_social_media">
+                    <a target="_blank" href="https://github.com/Patricia1203/projeto-individual" class="footer-link" id="git_hub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

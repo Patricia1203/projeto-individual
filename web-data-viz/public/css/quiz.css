@@ -1,0 +1,457 @@
+:root {
+    --primary-text-color: #d9d9d9;
+    --accent-color: #c8aa6e;
+    --background-dark: #0a1428;
+    --background-nav: rgb(10 20 40);
+    --demacia-color: #f8e16c;
+    --noxus-color: #ff4545;
+    --ionia-color: #9678c9;
+    --freljord-color: #88d0e3;
+    --sentina-color: #3c7a3c;
+    --piza-color: #c0c0c0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: var(--background-dark);
+    color: var(--primary-text-color);
+    min-height: 100vh;
+    padding-top: 80px; /* For fixed navbar */
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR (igual ao index) */
+#nav-bar {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-nav);
+    padding: 0 24px;
+    border-bottom: 2px solid var(--accent-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.logo-league {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+.nav-links-container {
+    display: flex;
+    justify-content: left;
+    flex-grow: 1;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#nav-bar .link {
+    position: relative;
+    margin: 0 15px;
+    padding-bottom: 5px;
+    color: var(--primary-text-color);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+#nav-bar .nav-button-box{
+    margin: 0 0 0 10px;
+}
+
+#nav-bar .nav-button-box:first-of-type{
+    margin-left: 15px;
+}
+
+#nav-bar .link:hover {
+    color: var(--accent-color);
+}
+
+#nav-bar .link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    left: 0;
+    height: 3px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+#nav-bar .link:hover::before,
+#nav-bar .link.active::before {
+    width: 100%;
+}
+
+.nav-button{
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    margin-left: 5px;
+    padding: 8px 18px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Fixed '0.2a' to '0.2s' */
+}
+
+.nav-button.login{
+    background-color: var(--accent-color);
+    color: var(--background-dark);
+    border-color: var(--accent-color);
+}
+
+.nav-button.regist{
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.nav-button.login:hover{
+    background-color: #e6c58a;
+    color: var(--background-dark);
+    transform: translateY(-1px);
+}
+
+.nav-button.regist:hover{
+    background-color: var(--accent-color);
+    color: var(--background-dark);
+    transform: translateY(-1px);
+}
+
+.nav-button::before{
+    display: none;
+}
+
+.hamburger-container {
+    display: none;
+    z-index: 1001;
+}
+
+.hamburger {
+    cursor: pointer;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    height: 2.5em;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: var(--primary-text-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked+svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked+svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+/* QUIZ SLIDER */
+.quiz-section {
+    padding: 60px 0; /* Adjusted padding, bottom padding can be less critical with flex-grow */
+    background: rgba(10, 20, 40, 0.95);
+    flex-grow: 1; /* Allows section to take available vertical space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically if it's smaller than the section */
+}
+
+.title.section-title {
+    font-family: serif;
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.quiz-slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 0 auto;
+    width: 100%; /* Takes full width of its parent content area */
+    max-width: 1200px;
+    position: relative;
+    min-height: 500px; 
+}
+
+.arrow-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 3.5rem;
+    cursor: pointer;
+    z-index: 2;
+    transition: color 0.2s;
+    padding: 0 28px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.arrow-btn:hover {
+    color: #fff;
+}
+
+.quiz-slider {
+    flex-grow: 1; /* Takes space between arrows */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 900px; */ /* No longer fixed width, flex-grow handles it */
+    /* max-width: 95vw; */ /* Max width handled by container */
+    overflow: hidden; /* KEY CHANGE: Hides parts of non-active slides */
+    position: relative;
+    min-height: calc(420px * 1.18); /* Default min-height for selected slide */
+}
+
+.quiz-slide {
+    background: var(--background-dark);
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    overflow: hidden;
+    min-width: 260px;
+    min-height: 420px;
+    max-width: 400px;
+    margin: 0; /* Margin was 0 0px, simplified */
+    opacity: 0.5;
+    filter: grayscale(1);
+    transform: scale(0.7) translateY(40px);
+    transition: 
+        transform 0.4s cubic-bezier(.25,.8,.25,1), 
+        box-shadow 0.4s, 
+        filter 0.4s, 
+        opacity 0.4s;
+    position: absolute;
+    left: 50%;
+    top: 0; /* Slides align to the top of quiz-slider */
+    pointer-events: none;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quiz-slide.selected {
+    opacity: 1;
+    filter: grayscale(0);
+    box-shadow: 0 12px 48px var(--accent-color, #c8aa6e);
+    transform: scale(1.18) translate(-50%, 0); /* translate(-50%, 0) centers it horizontally */
+    /* left: 50%; */ /* Already set in .quiz-slide */
+    z-index: 3;
+    pointer-events: auto;
+}
+.quiz-slide.selected.demacia { box-shadow: 0 12px 48px var(--demacia-color, #f8e16c);}
+.quiz-slide.selected.noxus { box-shadow: 0 12px 48px var(--noxus-color, #ff4545);}
+.quiz-slide.selected.ionia { box-shadow: 0 12px 48px var(--ionia-color, #9678c9);}
+.quiz-slide.selected.freljord { box-shadow: 0 12px 48px var(--freljord-color, #88d0e3);}
+.quiz-slide.selected.sentina { box-shadow: 0 12px 48px var(--sentina-color, #3c7a3c);}
+.quiz-slide.selected.piza { box-shadow: 0 12px 48px var(--piza-color, #c0c0c0);}
+
+.quiz-slide.left {
+    transform: scale(0.7) translate(-220%, 40px); /* This should push it off-screen with overflow:hidden */
+    /* left: 50%; */ /* Already set */
+    z-index: 2;
+}
+.quiz-slide.right {
+    transform: scale(0.7) translate(120%, 40px); /* This should push it off-screen with overflow:hidden */
+    /* left: 50%; */ /* Already set */
+    z-index: 2;
+}
+
+.quiz-slide img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: filter 0.3s;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.quiz-slide .quiz-info {
+    padding: 32px 24px 24px 24px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quiz-slide h3 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    font-family: serif;
+    font-weight: 700;
+}
+
+.quiz-slide p {
+    font-size: 1.15rem;
+    color: var(--primary-text-color);
+    margin-bottom: 24px;
+}
+
+.quiz-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 24px;
+    border: none;
+    background: var(--accent-color);
+    color: var(--background-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.15rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+.quiz-btn:hover {
+    background: #e6c58a;
+    color: var(--background-dark);
+}
+
+/* Footer */
+footer {
+    width: 100%; /* Changed from 100vw to 100% for better flex compatibility */
+    background: var(--background-nav);
+    color: var(--primary-text-color);
+    padding: 32px 0 16px 0;
+    text-align: center;
+    border-top: 2px solid var(--accent-color);
+    z-index: 10; /* May not be strictly necessary with flex, but harmless */
+    position: relative;
+    flex-shrink: 0; /* Prevents footer from shrinking */
+}
+.footer_content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#footer_contacts h1 {
+    font-family: serif;
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+#footer_social_media .footer-link {
+    color: var(--accent-color);
+    margin: 0 8px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+#footer_social_media .footer-link:hover {
+    color: #fff;
+}
+
+
+/* Responsivo */
+@media (max-width: 1200px) {
+    .quiz-slider {
+        /* width: 98vw; */ /* No longer needed, flex-grow handles width */
+        /* max-width: 98vw; */
+    }
+    .quiz-slide {
+        min-width: 200px;
+        max-width: 320px;
+        /* min-height for slide itself doesn't change here, base is 420px */
+    }
+    /* quiz-slider min-height remains calc(420px * 1.18) as quiz-slide min-height is still 420px */
+}
+
+@media (max-width: 900px) {
+    .quiz-slider-container {
+        min-height: 350px;
+    }
+    .quiz-slider {
+        /* width: 98vw; */
+        /* max-width: 98vw; */
+        min-height: calc(220px * 1.18); /* Based on .quiz-slide min-height at this breakpoint */
+    }
+    .quiz-slide {
+        min-width: 150px;
+        max-width: 220px;
+        min-height: 220px; /* Overrides base min-height */
+    }
+    .quiz-slide.selected {
+        min-width: 200px; /* This is for content fitting, not overall height scaling directly */
+        max-width: 260px;
+    }
+    .quiz-slide img {
+        height: 120px;
+    }
+    .quiz-slide .quiz-info {
+        padding: 18px 10px 10px 10px;
+    }
+    .quiz-slide h3 {
+        font-size: 1.2rem;
+    }
+    .quiz-slide p {
+        font-size: 0.95rem;
+    }
+    .quiz-btn {
+        padding: 8px 18px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .quiz-section {
+        padding: 20px 0; /* Adjusted padding */
+    }
+    .quiz-slider-container {
+        min-height: 220px;
+    }
+    .quiz-slider {
+        min-height: calc(120px * 1.18); /* Based on .quiz-slide min-height at this breakpoint */
+    }
+    .quiz-slide {
+        min-width: 110px;
+        max-width: 140px;
+        min-height: 120px; /* Overrides base min-height */
+    }
+    .quiz-slide.selected {
+        min-width: 150px;
+        max-width: 180px;
+    }
+    .quiz-slide img {
+        height: 70px;
+    }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzes de Runeterra</title>
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="nav-bar">
+        <section class="box-nav logo-container">
+            <img src="img/logo-league.png" alt="" class="logo-league">
+        </section>
+        <section class="box-nav nav-links-container">
+            <nav>
+                <ul class="box-nav row nav-links">
+                    <li class="box"><a href="index.html" class="link box">Home</a></li>
+                    <li class="box"><a href="#" class="link box">Campeãs</a></li>
+                    <li class="box"><a href="quiz.html" class="link box active">Quiz</a></li>
+                </ul>
+                <ul class="box-nav row nav-buttons">
+                    <li class="box nav-button-box"><a href="login_cad.html?mode=login" class="link nav-button login">Login</a></li>
+                    <li class="box nav-button-box"><a href="login_cad.html?mode=cadastro" class="link nav-button regist">Cadastro</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section class="box-nav hamburger-container">
+            <label class="hamburger">
+                <input type="checkbox" id="hamburger-checkbox">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom"
+                        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+                    </path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+        </section>
+    </header>
+
+    <main>
+        <section class="quiz-section">
+            <h2 class="title section-title">Escolha um Quiz por Região</h2>
+            <div class="quiz-slider-container">
+                <button class="arrow-btn left" id="arrow-left"><i class="fa-solid fa-arrow-left"></i></button>
+                <div class="quiz-slider" id="quiz-slider">
+                    <div class="quiz-slide demacia selected">
+                        <img src="img/demacia.webp" alt="Demacia">
+                        <div class="quiz-info">
+                            <h3>Demacia</h3>
+                            <p>Teste seus conhecimentos sobre o reino da justiça e honra!</p>
+                            <a href="#" class="quiz-btn">Começar Quiz</a>
+                        </div>
+                    </div>
+                    <div class="quiz-slide noxus">
+                        <img src="img/noxus.webp" alt="Noxus">
+                        <div class="quiz-info">
+                            <h3>Noxus</h3>
+                            <p>Você conhece o império da força e ambição?</p>
+                            <a href="#" class="quiz-btn">Começar Quiz</a>
+                        </div>
+                    </div>
+                    <div class="quiz-slide ionia">
+                        <img src="img/ionia.webp" alt="Ionia">
+                        <div class="quiz-info">
+                            <h3>Ionia</h3>
+                            <p>Descubra curiosidades sobre a terra da magia e harmonia.</p>
+                            <a href="#" class="quiz-btn">Começar Quiz</a>
+                        </div>
+                    </div>
+                    <div class="quiz-slide freljord">
+                        <img src="img/freljord.webp" alt="Freljord">
+                        <div class="quiz-info">
+                            <h3>Freljord</h3>
+                            <p>Desafie-se no reino do gelo e da guerra!</p>
+                            <a href="#" class="quiz-btn">Começar Quiz</a>
+                        </div>
+                    </div>
+                    <div class="quiz-slide sentina">
+                        <img src="img/aguas-de-sentina.jpg" alt="Águas de Sentina">
+                        <div class="quiz-info">
+                            <h3>Águas de Sentina</h3>
+                            <p>Você é um verdadeiro pirata de Águas de Sentina?</p>
+                            <a href="#" class="quiz-btn">Começar Quiz</a>
+                        </div>
+                    </div>
+                    <div class="quiz-slide piza">
+                        <img src="img/piltover-zaun.webp" alt="Piltover & Zaun">
+                        <div class="quiz-info">
+                            <h3>Piltover & Zaun</h3>
+                            <p>Teste seu conhecimento sobre inovação e caos!</p>
+                            <a href="#" class="quiz-btn">Começar Quiz</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="arrow-btn right" id="arrow-right"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer_content">
+            <div id="footer_contacts">
+                <h1>Logo</h1>
+                <p>It's all about your dreams</p>
+                <div id="footer_social_media">
+                    <a href="#" class="footer-link" id="git_hub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/quiz.js"></script>
+</body>
+</html>

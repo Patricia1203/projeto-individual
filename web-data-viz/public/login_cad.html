@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">x'
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login_cad.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="sign-in-js">
+    <!-- NAVBAR -->
+    <header id="nav-bar">
+        <section class="box-nav logo-container">
+            <img src="img/logo-league.png" alt="" class="logo-league">
+        </section>
+        <section class="box-nav nav-links-container">
+            <nav>
+                <ul class="box-nav row nav-links">
+                    <li class="box"><a href="index.html" class="link box">Home</a></li>
+                    <li class="box"><a href="#" class="link box">Campeãs</a></li>
+                    <li class="box"><a href="#" class="link box">Quiz</a></li>
+                </ul>
+                <ul class="box-nav row nav-buttons">
+                    <li class="box nav-button-box"><a href="login_cad.html?mode=login"
+                            class="link nav-button login">Login</a></li>
+                    <li class="box nav-button-box"><a href="login_cad.html?mode=cadastro"
+                            class="link nav-button regist">Cadastro</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section class="box-nav hamburger-container">
+            <label class="hamburger">
+                <input type="checkbox" id="hamburger-checkbox">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom"
+                        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+                    </path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+        </section>
+    </header>
+
+    <!-- SLIDESHOW DE FUNDO -->
+    <div class="background-slideshow">
+        <img src="img/miss-fortune.jpg" class="slide-bg active" alt="Miss Fortune">
+        <img src="img/ashe.jpg" class="slide-bg" alt="Ashe">
+        <img src="img/malphite.jpg" class="slide-bg" alt="Malphite">
+        <img src="img/annie.jpg" class="slide-bg" alt="Annie">
+        <img src="img/lux.jpg" class="slide-bg" alt="Lux">
+        <img src="img/fiddlesticks.jpg" class="slide-bg" alt="Fiddlesticks">
+    </div>
+
+    <!-- FORMULÁRIO -->
+    <main>
+        <div class="container">
+            <div class="content first-content">
+                <div class="first-column">
+                    <h2 class="title title-primary">Bem vindo de volta</h2>
+                    <p class="description description-primary">Caso já tenha sua conta</p>
+                    <p class="description description-primary">faça login</p>
+                    <button id="signup" class="btn btn-primary">Sign Up</button>
+                </div>
+                <div class="second-column">
+                    <h2 class="title title-second">Criar Conta</h2>
+                    <p class="description description-second">Use seu e-mail para cadastro:</p>
+                    <form class="form">
+                        <label class="label-input" for="">
+                            <i class="far fa-user icon-modify"></i>
+                            <input type="text" placeholder="Nome" id="nome_input">
+                        </label>
+                        <label class="label-input" for="">
+                            <i class="fa fa-user-circle icon-modify"></i>
+                            <input type="text" placeholder="Username" id="username_input">
+                        </label>
+                        <label class="label-input" for="">
+                            <i class="far fa-envelope icon-modify"></i>
+                            <input type="email" placeholder="Email" id="email_input">
+                        </label>
+                        <label class="label-input" for="">
+                            <i class="fas fa-lock icon-modify"></i>
+                            <input type="password" placeholder="Senha" id="senha_input">
+                        </label>
+                        <div class="password-strength">
+                            <div id="strength-bar"></div>
+                            <span id="strength-text"></span>
+                        </div>
+                        <label class="label-input" for="">
+                            <i class="fas fa-lock icon-modify"></i>
+                            <input type="password" placeholder="Confirme a senha" id="confirmacao_senha_input">
+                        </label>
+                        <button class="btn btn-second" onclick="cadastrar()">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+            <div class="content second-content">
+                <div class="first-column">
+                    <h2 class="title title-primary">Olá, Invocador!</h2>
+                    <p class="description description-primary">Entre com seus dados pessoais</p>
+                    <p class="description description-primary">e comece sua jornada conosco</p>
+                    <button id="signin" class="btn btn-primary">Sign In</button>
+                </div>
+                <div class="second-column">
+                    <h2 class="title title-second">Entrar</h2>
+                    <p class="description description-second">Use sua conta de e-mail:</p>
+                    <form class="form">
+                        <label class="label-input" for="">
+                            <i class="far fa-envelope icon-modify"></i>
+                            <input type="email" placeholder="Email">
+                        </label>
+                        <label class="label-input" for="">
+                            <i class="fas fa-lock icon-modify"></i>
+                            <input type="password" placeholder="Senha">
+                        </label>
+                        <a class="password" href="#">Esqueceu sua senha?</a>
+                        <button class="btn btn-second">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer_content">
+            <div id="footer_contacts">
+                <h1>Patricia Batista Borges</h1>
+                <p>“Às vezes você precisa ser valente e acreditar que pode mudar o seu destino.”</p>
+                <p> — Valente</p>
+                <div id="footer_social_media">
+                    <a target="_blank" href="https://github.com/Patricia1203/projeto-individual" class="footer-link" id="git_hub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/log_cad.js"></script>
+</body>
+
+</html>
