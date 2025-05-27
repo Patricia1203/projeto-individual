@@ -77,15 +77,61 @@ if (senhaInput) {
     });
 }
 
+//Login
+
+function entrar(event) {
+    if (event) event.preventDefault(); 
+
+
+    var emailVar = document.getElementById('login_email_input').value;
+    var senhaVar = document.getElementById('login_senha_input').value;
+
+    if (emailVar == "" || senhaVar == "") {
+        alert("Preencha todos os campos!");
+        return;
+    }
+
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            emailServer: emailVar,
+            senhaServer: senhaVar
+        })
+    }).then(function (resposta) {
+        if (resposta.ok) {
+            resposta.json().then(json => {
+                sessionStorage.EMAIL_USUARIO = json.email;
+                sessionStorage.NOME_USUARIO = json.nome;
+                sessionStorage.NICKNAME_USUARIO = json.nickname;
+                sessionStorage.ID_USUARIO = json.id;
+                alert("Login realizado com sucesso!");
+                setTimeout(function () {
+                    window.location = "quiz.html";
+                }, 1000);
+            });
+        } else {
+            resposta.text().then(texto => {
+                alert(texto);
+            });
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+    });
+
+    return ;
+}
+
 // Cadastro
 function cadastrar() {
-    // aguardar();
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
-    var usernameVar = username_input.value;
+    var nicknameVar = nickname_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
@@ -94,7 +140,7 @@ function cadastrar() {
     if (
       nomeVar == "" ||
       emailVar == "" ||
-      usernameVar == "" ||
+      nicknameVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == ""
     ) {
@@ -120,7 +166,7 @@ function cadastrar() {
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
-        usernameServer: usernameVar,
+        nicknameServer: nicknameVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
       }),

@@ -81,7 +81,7 @@
                         </label>
                         <label class="label-input" for="">
                             <i class="fa fa-user-circle icon-modify"></i>
-                            <input type="text" placeholder="Username" id="username_input">
+                            <input type="text" placeholder="Nickname" id="nickname_input">
                         </label>
                         <label class="label-input" for="">
                             <i class="far fa-envelope icon-modify"></i>
@@ -116,14 +116,14 @@
                     <form class="form">
                         <label class="label-input" for="">
                             <i class="far fa-envelope icon-modify"></i>
-                            <input type="email" placeholder="Email">
+                            <input type="email" placeholder="Email" id="login_email_input">
                         </label>
                         <label class="label-input" for="">
                             <i class="fas fa-lock icon-modify"></i>
-                            <input type="password" placeholder="Senha">
+                            <input type="password" placeholder="Senha" id="login_senha_input">
                         </label>
                         <a class="password" href="#">Esqueceu sua senha?</a>
-                        <button class="btn btn-second">Sign In</button>
+                        <button class="btn btn-second" onclick="entrar(event)">Sign In</button>
                     </form>
                 </div>
             </div>

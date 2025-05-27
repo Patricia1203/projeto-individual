@@ -5,7 +5,7 @@ const PORTA = 3000;
 
 const app = express();
 
-const usuarioRouter = require("./src/routes/usuarioRouter");
+const usuarioRouter = require("./src/routes/usuarios");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
