@@ -4,17 +4,25 @@ function validarSessao() {
     var nome = sessionStorage.NOME_USUARIO;
 
     var b_usuario = document.getElementById("b_usuario");
+    var userName = document.getElementById("user-name"); // Adicione esta linha!
+    var userMenu = document.getElementById("user-menu-nav");
+    var loginCadastroNav = document.getElementById("login-cadastro-nav");
 
     if (email != null && nome != null) {
-        b_usuario.innerHTML = nome;
+        if (b_usuario) b_usuario.innerHTML = nome;
+        if (userName) userName.innerHTML = nome;
+        if (userMenu) userMenu.style.display = "flex";
+        if (loginCadastroNav) loginCadastroNav.style.display = "none";
     } else {
-        window.location = "../login.html";
+        if (userMenu) userMenu.style.display = "none";
+        if (loginCadastroNav) loginCadastroNav.style.display = "flex";
+        window.location = "login_cad.html?mode=login";
     }
 }
 
 function limparSessao() {
     sessionStorage.clear();
-    window.location = "../login.html";
+    window.location = "login_cad.html?mode=login";
 }
 
 // carregamento (loading)

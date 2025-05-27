@@ -17,24 +17,49 @@
     <title>Universo League of Legends</title>
 </head>
 
-<body>
+<body onload="validarSessao()">
     <header id="nav-bar">
         <section class="box-nav logo-container">
             <img src="img/logo-league.png" alt="" class="logo-league">
         </section>
         <section class="box-nav nav-links-container">
-    <nav>
-        <ul class="box-nav row nav-links">
-            <li class="box"><a href="index.html" class="link box active">Home</a></li>
-            <li class="box"><a href="#" class="link box">Campeãs</a></li>
-            <li class="box"><a href="#" class="link box">Quiz</a></li>
-        </ul>
-        <ul class="box-nav row nav-buttons">
-            <li class="box nav-button-box"><a href="login_cad.html?mode=login" class="link nav-button login">Login</a></li>
-            <li class="box nav-button-box"><a href="login_cad.html?mode=cadastro" class="link nav-button regist">Cadastro</a></li>
-        </ul>
-    </nav>
-</section>
+            <nav>
+                <ul class="box-nav row nav-links">
+                    <li class="box"><a href="index.html" class="link box active">Home</a></li>
+                    <li class="box"><a href="#" class="link box">Campeãs</a></li>
+                    <li class="box" id="quiz-menu-item"><a href="quiz.html" class="link box">Quiz</a></li>
+                </ul>
+                <ul class="box-nav row nav-buttons" id="login-cadastro-nav">
+                    <li class="box nav-button-box"><a href="login_cad.html?mode=login"
+                            class="link nav-button login">Login</a></li>
+                    <li class="box nav-button-box"><a href="login_cad.html?mode=cadastro"
+                            class="link nav-button regist">Cadastro</a></li>
+                </ul>
+                <div id="user-menu-nav" style="display:none;">
+                    <span id="b_usuario"></span>
+                    <img src="img/user1.jpg" class="user-pic" onclick="toggleMenu()">
+                    <div class="sub-menu-wrap" id="subMenu">
+                        <div class="sub-menu">
+                            <div class="user-info">
+                                <img src="img/user1.jpg" alt="">
+                                <h2 id="user-name">Usuário</h2>
+                            </div>
+                            <hr>
+                            <a href="#" class="sub-menu-link">
+                                <i class="fa-solid fa-user"></i>
+                                <p>Perfil</p>
+                                <span></span>
+                            </a>
+                            <a href="#" class="sub-menu-link" onclick="limparSessao()">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <p>Sair</p>
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </section>
         <section class="box-nav hamburger-container">
             <label class="hamburger">
                 <input type="checkbox" id="hamburger-checkbox">
@@ -353,13 +378,16 @@
                 <p>“Às vezes você precisa ser valente e acreditar que pode mudar o seu destino.”</p>
                 <p> — Valente</p>
                 <div id="footer_social_media">
-                    <a target="_blank" href="https://github.com/Patricia1203/projeto-individual" class="footer-link" id="git_hub">
+                    <a target="_blank" href="https://github.com/Patricia1203/projeto-individual" class="footer-link"
+                        id="git_hub">
                         <i class="fa-brands fa-github"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
+    <script src="js/sessao.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizzes de Runeterra</title>
     <link rel="stylesheet" href="css/quiz.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+
+<body onload="validarSessao()">
     <header id="nav-bar">
         <section class="box-nav logo-container">
             <img src="img/logo-league.png" alt="" class="logo-league">
@@ -20,12 +23,37 @@
                 <ul class="box-nav row nav-links">
                     <li class="box"><a href="index.html" class="link box">Home</a></li>
                     <li class="box"><a href="#" class="link box">Campeãs</a></li>
-                    <li class="box"><a href="quiz.html" class="link box active">Quiz</a></li>
+                    <li class="box" id="quiz-menu-item"><a href="quiz.html" class="link box active">Quiz</a></li>
                 </ul>
-                <ul class="box-nav row nav-buttons">
-                    <li class="box nav-button-box"><a href="login_cad.html?mode=login" class="link nav-button login">Login</a></li>
-                    <li class="box nav-button-box"><a href="login_cad.html?mode=cadastro" class="link nav-button regist">Cadastro</a></li>
+                <ul class="box-nav row nav-buttons" id="login-cadastro-nav">
+                    <li class="box nav-button-box"><a href="login_cad.html?mode=login"
+                            class="link nav-button login">Login</a></li>
+                    <li class="box nav-button-box"><a href="login_cad.html?mode=cadastro"
+                            class="link nav-button regist">Cadastro</a></li>
                 </ul>
+                <div id="user-menu-nav" style="display:none;">
+                    <span id="b_usuario"></span>
+                    <img src="img/user1.jpg" class="user-pic" onclick="toggleMenu()">
+                    <div class="sub-menu-wrap" id="subMenu">
+                        <div class="sub-menu">
+                            <div class="user-info">
+                                <img src="img/user1.jpg" alt="">
+                                <h2 id="user-name"></h2>
+                            </div>
+                            <hr>
+                            <a href="#" class="sub-menu-link">
+                                <i class="fa-solid fa-user"></i>
+                                <p>Perfil</p>
+                                <span></span>
+                            </a>
+                            <a href="#" class="sub-menu-link" onclick="limparSessao()">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <p>Sair</p>
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </nav>
         </section>
         <section class="box-nav hamburger-container">
@@ -113,6 +141,8 @@
             </div>
         </div>
     </footer>
+    <script src="js/sessao.js"></script>
     <script src="js/quiz.js"></script>
 </body>
+
 </html>
