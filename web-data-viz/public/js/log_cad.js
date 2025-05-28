@@ -8,7 +8,6 @@ function setLoginModeFromURL() {
 }
 setLoginModeFromURL();
 
-// Botões internos continuam funcionando normalmente
 var btnSignin = document.querySelector("#signin");
 var btnSignup = document.querySelector("#signup");
 btnSignin.addEventListener("click", function () {
@@ -20,12 +19,10 @@ btnSignup.addEventListener("click", function () {
 
 document.querySelectorAll('.nav-button-box a').forEach(link => {
     link.addEventListener('click', function(e) {
-        // Só intercepta se já estiver na página login_cad.html
         if (window.location.pathname.endsWith('login_cad.html')) {
             e.preventDefault();
             const mode = this.href.includes('mode=cadastro') ? 'sign-in-js' : 'sign-up-js';
             document.body.className = mode;
-            // Atualiza a URL sem recarregar
             window.history.replaceState({}, '', `login_cad.html?mode=${mode === 'sign-up-js' ? 'cadastro' : 'login'}`);
         }
     });

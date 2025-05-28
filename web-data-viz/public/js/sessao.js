@@ -19,8 +19,8 @@ function validarSessao() {
         if (userMenu) userMenu.style.display = "none";
         if (loginCadastroNav) loginCadastroNav.style.display = "flex";
         if (quizMenuItem) quizMenuItem.style.display = "none";
-        if (!window.location.pathname.endsWith("login_cad.html")) {
-            window.location = "login_cad.html?mode=login";
+        if (!window.location.pathname.endsWith("/index.html")) {
+            window.location = "/index.html";
         }
     }
 }

@@ -321,7 +321,7 @@ body {
     width: 100%; /* Takes full width of its parent content area */
     max-width: 1200px;
     position: relative;
-    min-height: 500px; 
+    min-height: 600px; 
 }
 
 .arrow-btn {
@@ -342,15 +342,13 @@ body {
 }
 
 .quiz-slider {
-    flex-grow: 1; /* Takes space between arrows */
+    flex-grow: 1; 
     display: flex;
     align-items: center;
     justify-content: center;
-    /* width: 900px; */ /* No longer fixed width, flex-grow handles it */
-    /* max-width: 95vw; */ /* Max width handled by container */
-    overflow: hidden; /* KEY CHANGE: Hides parts of non-active slides */
+    overflow: hidden; 
     position: relative;
-    min-height: calc(420px * 1.18); /* Default min-height for selected slide */
+    min-height: calc(560px * 1.18); 
 }
 
 .quiz-slide {
@@ -361,7 +359,7 @@ body {
     min-width: 260px;
     min-height: 420px;
     max-width: 400px;
-    margin: 0; /* Margin was 0 0px, simplified */
+    margin: 0;
     opacity: 0.5;
     filter: grayscale(1);
     transform: scale(0.7) translateY(40px);
@@ -372,7 +370,7 @@ body {
         opacity 0.4s;
     position: absolute;
     left: 50%;
-    top: 0; /* Slides align to the top of quiz-slider */
+    top: 13%;
     pointer-events: none;
     z-index: 1;
     display: flex;
