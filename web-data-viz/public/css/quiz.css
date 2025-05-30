@@ -24,7 +24,8 @@ body {
     background-color: var(--background-dark);
     color: var(--primary-text-color);
     min-height: 100vh;
-    padding-top: 80px; /* For fixed navbar */
+    padding-top: 80px;
+    /* For fixed navbar */
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -161,14 +162,14 @@ body {
     display: none;
 }
 
-.user-pic{
+.user-pic {
     width: 45px;
     border-radius: 50%;
     cursor: pointer;
     margin-left: 30px;
 }
 
-.sub-menu-wrap{
+.sub-menu-wrap {
     position: absolute;
     top: 100%;
     right: 1%;
@@ -178,47 +179,48 @@ body {
     transition: max-height 0.5s
 }
 
-#b_usuario{
+#b_usuario {
     position: relative;
     display: flex;
     align-items: center;
 }
 
-.sub-menu-wrap.open-menu{
+.sub-menu-wrap.open-menu {
     max-height: 400px;
 }
 
-.sub-menu{
-    background: #fff;
+.sub-menu {
+    background: var(--background-dark);
     padding: 20px;
     margin: 10px;
+    border: 1px solid var(--accent-color);
 }
 
-.user-info{
+.user-info {
     display: flex;
-    align-items: center;  
+    align-items: center;
 }
 
-.user-info h2{
+.user-info h2 {
     font-weight: 500;
     color: #c8aa6e;
 }
 
-.user-info img{
+.user-info img {
     width: 60px;
     border-radius: 50%;
     margin-right: 15px;
 }
 
-.sub-menu hr{
+.sub-menu hr {
     border: 0;
     height: 1px;
     width: 100%;
-    background: #ccc;
+    background: var(--piza-color);
     margin: 15px 0 10px;
 }
 
-.sub-menu-link{
+.sub-menu-link {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -226,28 +228,28 @@ body {
     margin: 12px 0;
 }
 
-.sub-menu-link p{
+.sub-menu-link p {
     width: 100%;
 }
 
-.sub-menu-link i, 
-.sub-menu-link svg{
+.sub-menu-link i,
+.sub-menu-link svg {
     width: 40px;
-    background: #e5e5e5;
+    background: var(--piza-color);
     border-radius: 50%;
     padding: 8px;
-    margin-right: 15px;
+    margin-right: 15px;;
 }
 
-.sub-menu-link span{
+.sub-menu-link span {
     font-size: 22px;
 }
 
-.sub-menu-link:hover span{
+.sub-menu-link:hover span {
     transform: translateX(5px);
 }
 
-.sub-menu-link:hover p{
+.sub-menu-link:hover p {
     font-weight: 600;
 }
 
@@ -292,15 +294,107 @@ body {
     stroke-dashoffset: -32.42;
 }
 
+/* Dashboard */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 40px auto 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.kpis {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--accent-color);
+
+}
+
+.kpi-card {
+    flex: 1;
+    background: var(--background-nav);
+    color: var(--primary-text-color);
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+    padding: 24px 18px;
+    text-align: center;
+    min-width: 180px;
+}
+
+.kpi-card h4 {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.kpi-card p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.dashboard-main {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.dashboard-graph {
+    flex: 2;
+    background: var(--background-nav);
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+    padding: 24px;
+}
+
+.dashboard-ranking {
+    flex: 1;
+    background: var(--background-nav);
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+    padding: 24px;
+    color: var(--primary-text-color);
+}
+
+.dashboard-ranking h4 {
+    color: var(--accent-color);
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+}
+
+.ranking-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ranking-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #222;
+    font-size: 1rem;
+}
+
+.ranking-list li span {
+    min-width: 60px;
+    text-align: right;
+}
+
 /* QUIZ SLIDER */
 .quiz-section {
-    padding: 60px 0; /* Adjusted padding, bottom padding can be less critical with flex-grow */
+    padding: 60px 0;
+    /* Adjusted padding, bottom padding can be less critical with flex-grow */
     background: rgba(10, 20, 40, 0.95);
-    flex-grow: 1; /* Allows section to take available vertical space */
+    flex-grow: 1;
+    /* Allows section to take available vertical space */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Center content vertically if it's smaller than the section */
+    justify-content: center;
+    /* Center content vertically if it's smaller than the section */
 }
 
 .title.section-title {
@@ -318,10 +412,11 @@ body {
     justify-content: center;
     gap: 0;
     margin: 0 auto;
-    width: 100%; /* Takes full width of its parent content area */
+    width: 100%;
+    /* Takes full width of its parent content area */
     max-width: 1200px;
     position: relative;
-    min-height: 600px; 
+    min-height: 600px;
 }
 
 .arrow-btn {
@@ -337,24 +432,25 @@ body {
     display: flex;
     align-items: center;
 }
+
 .arrow-btn:hover {
     color: #fff;
 }
 
 .quiz-slider {
-    flex-grow: 1; 
+    flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; 
+    overflow: hidden;
     position: relative;
-    min-height: calc(560px * 1.18); 
+    min-height: calc(560px * 1.18);
 }
 
 .quiz-slide {
     background: var(--background-dark);
     border-radius: 18px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
     overflow: hidden;
     min-width: 260px;
     min-height: 420px;
@@ -363,10 +459,10 @@ body {
     opacity: 0.5;
     filter: grayscale(1);
     transform: scale(0.7) translateY(40px);
-    transition: 
-        transform 0.4s cubic-bezier(.25,.8,.25,1), 
-        box-shadow 0.4s, 
-        filter 0.4s, 
+    transition:
+        transform 0.4s cubic-bezier(.25, .8, .25, 1),
+        box-shadow 0.4s,
+        filter 0.4s,
         opacity 0.4s;
     position: absolute;
     left: 50%;
@@ -382,26 +478,51 @@ body {
     opacity: 1;
     filter: grayscale(0);
     box-shadow: 0 12px 48px var(--accent-color, #c8aa6e);
-    transform: scale(1.18) translate(-50%, 0); /* translate(-50%, 0) centers it horizontally */
-    /* left: 50%; */ /* Already set in .quiz-slide */
+    transform: scale(1.18) translate(-50%, 0);
+    /* translate(-50%, 0) centers it horizontally */
+    /* left: 50%; */
+    /* Already set in .quiz-slide */
     z-index: 3;
     pointer-events: auto;
 }
-.quiz-slide.selected.demacia { box-shadow: 0 12px 48px var(--demacia-color, #f8e16c);}
-.quiz-slide.selected.noxus { box-shadow: 0 12px 48px var(--noxus-color, #ff4545);}
-.quiz-slide.selected.ionia { box-shadow: 0 12px 48px var(--ionia-color, #9678c9);}
-.quiz-slide.selected.freljord { box-shadow: 0 12px 48px var(--freljord-color, #88d0e3);}
-.quiz-slide.selected.sentina { box-shadow: 0 12px 48px var(--sentina-color, #3c7a3c);}
-.quiz-slide.selected.piza { box-shadow: 0 12px 48px var(--piza-color, #c0c0c0);}
+
+.quiz-slide.selected.demacia {
+    box-shadow: 0 12px 48px var(--demacia-color, #f8e16c);
+}
+
+.quiz-slide.selected.noxus {
+    box-shadow: 0 12px 48px var(--noxus-color, #ff4545);
+}
+
+.quiz-slide.selected.ionia {
+    box-shadow: 0 12px 48px var(--ionia-color, #9678c9);
+}
+
+.quiz-slide.selected.freljord {
+    box-shadow: 0 12px 48px var(--freljord-color, #88d0e3);
+}
+
+.quiz-slide.selected.sentina {
+    box-shadow: 0 12px 48px var(--sentina-color, #3c7a3c);
+}
+
+.quiz-slide.selected.piza {
+    box-shadow: 0 12px 48px var(--piza-color, #c0c0c0);
+}
 
 .quiz-slide.left {
-    transform: scale(0.7) translate(-220%, 40px); /* This should push it off-screen with overflow:hidden */
-    /* left: 50%; */ /* Already set */
+    transform: scale(0.7) translate(-220%, 40px);
+    /* This should push it off-screen with overflow:hidden */
+    /* left: 50%; */
+    /* Already set */
     z-index: 2;
 }
+
 .quiz-slide.right {
-    transform: scale(0.7) translate(120%, 40px); /* This should push it off-screen with overflow:hidden */
-    /* left: 50%; */ /* Already set */
+    transform: scale(0.7) translate(120%, 40px);
+    /* This should push it off-screen with overflow:hidden */
+    /* left: 50%; */
+    /* Already set */
     z-index: 2;
 }
 
@@ -456,32 +577,39 @@ body {
 
 /* Footer */
 footer {
-    width: 100%; /* Changed from 100vw to 100% for better flex compatibility */
+    width: 100%;
+    /* Changed from 100vw to 100% for better flex compatibility */
     background: var(--background-nav);
     color: var(--primary-text-color);
     padding: 32px 0 16px 0;
     text-align: center;
     border-top: 2px solid var(--accent-color);
-    z-index: 10; /* May not be strictly necessary with flex, but harmless */
+    z-index: 10;
+    /* May not be strictly necessary with flex, but harmless */
     position: relative;
-    flex-shrink: 0; /* Prevents footer from shrinking */
+    flex-shrink: 0;
+    /* Prevents footer from shrinking */
 }
+
 .footer_content {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 #footer_contacts h1 {
     font-family: serif;
     color: var(--accent-color);
     font-size: 2rem;
     margin-bottom: 8px;
 }
+
 #footer_social_media .footer-link {
     color: var(--accent-color);
     margin: 0 8px;
     font-size: 1.5rem;
     transition: color 0.3s;
 }
+
 #footer_social_media .footer-link:hover {
     color: #fff;
 }
@@ -490,14 +618,17 @@ footer {
 /* Responsivo */
 @media (max-width: 1200px) {
     .quiz-slider {
-        /* width: 98vw; */ /* No longer needed, flex-grow handles width */
+        /* width: 98vw; */
+        /* No longer needed, flex-grow handles width */
         /* max-width: 98vw; */
     }
+
     .quiz-slide {
         min-width: 200px;
         max-width: 320px;
         /* min-height for slide itself doesn't change here, base is 420px */
     }
+
     /* quiz-slider min-height remains calc(420px * 1.18) as quiz-slide min-height is still 420px */
 }
 
@@ -505,32 +636,43 @@ footer {
     .quiz-slider-container {
         min-height: 350px;
     }
+
     .quiz-slider {
         /* width: 98vw; */
         /* max-width: 98vw; */
-        min-height: calc(220px * 1.18); /* Based on .quiz-slide min-height at this breakpoint */
+        min-height: calc(220px * 1.18);
+        /* Based on .quiz-slide min-height at this breakpoint */
     }
+
     .quiz-slide {
         min-width: 150px;
         max-width: 220px;
-        min-height: 220px; /* Overrides base min-height */
+        min-height: 220px;
+        /* Overrides base min-height */
     }
+
     .quiz-slide.selected {
-        min-width: 200px; /* This is for content fitting, not overall height scaling directly */
+        min-width: 200px;
+        /* This is for content fitting, not overall height scaling directly */
         max-width: 260px;
     }
+
     .quiz-slide img {
         height: 120px;
     }
+
     .quiz-slide .quiz-info {
         padding: 18px 10px 10px 10px;
     }
+
     .quiz-slide h3 {
         font-size: 1.2rem;
     }
+
     .quiz-slide p {
         font-size: 0.95rem;
     }
+
     .quiz-btn {
         padding: 8px 18px;
         font-size: 1rem;
@@ -539,23 +681,31 @@ footer {
 
 @media (max-width: 600px) {
     .quiz-section {
-        padding: 20px 0; /* Adjusted padding */
+        padding: 20px 0;
+        /* Adjusted padding */
     }
+
     .quiz-slider-container {
         min-height: 220px;
     }
+
     .quiz-slider {
-        min-height: calc(120px * 1.18); /* Based on .quiz-slide min-height at this breakpoint */
+        min-height: calc(120px * 1.18);
+        /* Based on .quiz-slide min-height at this breakpoint */
     }
+
     .quiz-slide {
         min-width: 110px;
         max-width: 140px;
-        min-height: 120px; /* Overrides base min-height */
+        min-height: 120px;
+        /* Overrides base min-height */
     }
+
     .quiz-slide.selected {
         min-width: 150px;
         max-width: 180px;
     }
+
     .quiz-slide img {
         height: 70px;
     }

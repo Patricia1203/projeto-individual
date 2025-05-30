@@ -70,6 +70,40 @@
     </header>
 
     <main>
+         <div class="dashboard-container">
+            <!-- KPIs -->
+            <div class="kpis">
+                <div class="kpi-card">
+                    <h4>Percentual de Acertos</h4>
+                    <p id="kpi-acerto">83%</p>
+                </div>
+                <div class="kpi-card">
+                    <h4>Região com Mais Acertos</h4>
+                    <p id="kpi-regiao">Demacia</p>
+                </div>
+                <div class="kpi-card">
+                    <h4>Tempo Médio por Pergunta</h4>
+                    <p id="kpi-tempo">7.2s</p>
+                </div>
+                <div class="kpi-card">
+                    <h4>Total de Quizzes Respondidos</h4>
+                    <p id="kpi-quizzes">12</p>
+                </div>
+            </div>
+            <!-- Gráfico e Ranking -->
+            <div class="dashboard-main">
+                <div class="dashboard-graph">
+                    <h4 style="color:var(--accent-color);margin-bottom:12px;">Acertos por Região</h4>
+                    <canvas id="acertosRegiaoChart" height="220"></canvas>
+                </div>
+                <div class="dashboard-ranking">
+                    <h4>Ranking Geral</h4>
+                    <ul class="ranking-list" id="ranking-list">
+                        <!-- Ranking preenchido via JS -->
+                    </ul>
+                </div>
+            </div>
+        </div>
         <section class="quiz-section">
             <h2 class="title section-title">Escolha um Quiz por Região</h2>
             <div class="quiz-slider-container">
