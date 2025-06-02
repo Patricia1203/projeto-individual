@@ -1,0 +1,30 @@
+.demacia-header {
+    margin: 0 0 2rem 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
+        url(../assets/imgs/demacia2.webp) no-repeat center center;
+    background-size: cover;
+    color: #f0e6d2;
+    padding: 2rem;
+    text-align: center;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.demacia-header h1 {
+    font-family: 'Beaufort for LOL', serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.demacia-header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.text-gold {
+    color: #c8aa6e;
+}
