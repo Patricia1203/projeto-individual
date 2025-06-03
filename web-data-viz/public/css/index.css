@@ -1,17 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    font-family: "Poppins", sans-serif;
-}
-
-body {
-    background-color: #0a1428;
-    padding-top: 80px;
-}
-
 :root {
     --primary-text-color: #d9d9d9;
     --accent-color: #c8aa6e;
@@ -32,6 +18,23 @@ body {
     --pi-za-color: #c0c0c0;
     --shurima-color: #b87333;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #0a1428;
+    padding-top: 80px;
+}
+
+
+/* Cores para os campeões */
 
 .miss-color {
     color: var(--miss-color);
@@ -81,8 +84,7 @@ body {
     color: var(--pi-za-color);
 }
 
-/* Nav-Bar */
-
+/* Navbar */
 #nav-bar {
     display: flex;
     height: 80px;
@@ -213,14 +215,14 @@ body {
     display: none;
 }
 
-.user-pic{
+.user-pic {
     width: 45px;
     border-radius: 50%;
     cursor: pointer;
     margin-left: 30px;
 }
 
-.sub-menu-wrap{
+.sub-menu-wrap {
     position: absolute;
     top: 100%;
     right: 1%;
@@ -230,48 +232,49 @@ body {
     transition: max-height 0.5s
 }
 
-.sub-menu-wrap.open-menu{
-    max-height: 400px;
-}
-
-#b_usuario{
-    position: relative;
+#b_usuario {
     display: flex;
+    position: relative;
     align-items: center;
     color: var(--primary-text-color);
 }
 
-.sub-menu{
-    background: #fff;
+.sub-menu-wrap.open-menu {
+    max-height: 400px;
+}
+
+.sub-menu {
+    background: var(--background-dark);
     padding: 20px;
     margin: 10px;
+    border: 1px solid var(--accent-color);
 }
 
-.user-info{
+.user-info {
     display: flex;
-    align-items: center;  
+    align-items: center;
 }
 
-.user-info h2{
+.user-info h2 {
     font-weight: 500;
-    color: var(--accent-color);
+    color: #c8aa6e;
 }
 
-.user-info img{
+.user-info img {
     width: 60px;
     border-radius: 50%;
     margin-right: 15px;
 }
 
-.sub-menu hr{
+.sub-menu hr {
     border: 0;
     height: 1px;
     width: 100%;
-    background: #ccc;
+    background: var(--piza-color);
     margin: 15px 0 10px;
 }
 
-.sub-menu-link{
+.sub-menu-link {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -279,71 +282,31 @@ body {
     margin: 12px 0;
 }
 
-.sub-menu-link p{
+.sub-menu-link p {
     width: 100%;
 }
 
-.sub-menu-link i, 
-.sub-menu-link svg{
+.sub-menu-link i,
+.sub-menu-link svg {
     width: 40px;
-    background: #e5e5e5;
+    background: var(--piza-color);
     border-radius: 50%;
     padding: 8px;
-    margin-right: 15px;
+    margin-right: 15px;;
 }
 
-.sub-menu-link span{
+.sub-menu-link span {
     font-size: 22px;
 }
 
-.sub-menu-link:hover span{
+.sub-menu-link:hover span {
     transform: translateX(5px);
 }
 
-.sub-menu-link:hover p{
+.sub-menu-link:hover p {
     font-weight: 600;
 }
 
-.hamburger-container {
-    display: none;
-    z-index: 1001;
-}
-
-.hamburger {
-    cursor: pointer;
-}
-
-.hamburger input {
-    display: none;
-}
-
-.hamburger svg {
-    height: 2.5em;
-    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.line {
-    fill: none;
-    stroke: var(--primary-text-color);
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 3;
-    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.line-top-bottom {
-    stroke-dasharray: 12 63;
-}
-
-.hamburger input:checked+svg {
-    transform: rotate(-45deg);
-}
-
-.hamburger input:checked+svg .line-top-bottom {
-    stroke-dasharray: 20 300;
-    stroke-dashoffset: -32.42;
-}
 
 /* Slideshow */
 
@@ -1167,266 +1130,4 @@ footer {
 
 #footer_social_media .footer-link:hover {
     color: #fff;
-}
-
-
-@media (max-width: 1024px) {
-    .slide-overlay {
-        max-width: 60%;
-        left: 3%;
-    }
-
-    .slide-overlay h1 {
-        font-size: 2.2rem;
-    }
-
-    .slide-overlay p {
-        font-size: 1rem;
-    }
-
-    .container-box {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .content-block-1,
-    .content-block-2 {
-        width: 100%;
-    }
-
-    .timeline-history-container {
-        margin-top: 30px;
-    }
-
-    section.card-respons {
-        max-width: 320px;
-    }
-
-    section.card-respons.regions {
-        max-width: 300px;
-    }
-
-    .title.section-title {
-        font-size: 2.2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding-top: 70px;
-        background-size: 25%;
-    }
-
-    #nav-bar {
-        height: 70px;
-        padding: 0 15px;
-    }
-
-    .logo-league {
-        width: 100px;
-    }
-
-    .nav-links-container {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: var(--background-nav);
-        border-top: 1px solid var(--accent-color);
-        z-index: 50;
-    }
-
-    .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 15px 0;
-    }
-
-    .nav-links.active li {
-        width: 90%;
-        text-align: center;
-        margin: 8px 0;
-    }
-
-    .nav-links.active .link {
-        display: block;
-        width: 100%;
-        padding: 12px 0;
-    }
-
-    .nav-links.active .link::before {
-        display: none;
-    }
-
-    .nav-links.active .nav-button-box{
-        width: 80%;
-        margin: 8px;
-    }
-
-     .nav-links.active .nav-button{
-        display: block;
-        width: 100%;
-        padding: 12px 15px;
-        margin-left: 0;
-        box-sizing: border-box;
-    }
-
-    .hamburger-container {
-        display: flex;
-        align-items: center;
-    }
-
-    .card-img {
-        max-height: 450px;
-    }
-
-    .imagens {
-        height: 400px;
-    }
-
-    .slide-overlay {
-        max-width: 80%;
-        left: 50%;
-        text-align: center;
-        padding: 15px;
-        transform: translate(-50%, -50%);
-    }
-
-    .slide-overlay h1 {
-        font-size: 1.8rem;
-    }
-
-    .slide-overlay p {
-        font-size: 0.9rem;
-        margin-bottom: 20px;
-    }
-
-    .button-slide {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-
-    .title.section-title {
-        font-size: 2rem;
-        margin-bottom: 25px;
-    }
-
-    .cards-respons {
-        gap: 25px;
-        padding: 0 10px;
-    }
-
-    section.card-respons {
-        max-width: 450px;
-        min-height: auto;
-    }
-
-    section.card-respons h3 {
-        font-size: 1.6rem;
-    }
-
-    section.card-respons span {
-        font-size: 0.85rem;
-        min-height: 50px;
-    }
-
-    section.card-respons.regions {
-        max-width: 450px;
-        min-height: 280px;
-    }
-
-    section.card-respons.regions h3 {
-        margin-top: 120px;
-        font-size: 1.5rem;
-    }
-
-    .info-regions {
-        font-size: 1rem;
-    }
-
-    .title.rune,
-    .title.timeline {
-        font-size: 1.5rem;
-    }
-
-    .title-rune,
-    .title-period {
-        font-size: 1.3rem;
-    }
-
-    .text-history,
-    .text-period,
-    .text-frase {
-        font-size: 0.9rem;
-    }
-
-    .box-timeline-decorator {
-        display: none;
-    }
-
-    .container-timeline-content {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        background-size: 35%;
-    }
-
-    .slide-overlay h1 {
-        font-size: 1.5rem;
-    }
-
-    .slide-overlay p {
-        font-size: 0.8rem;
-        line-height: 1.4;
-    }
-
-    .button-slide {
-        padding: 8px 15px;
-        font-size: 0.8rem;
-    }
-
-    .title.section-title {
-        font-size: 1.7rem;
-    }
-
-    section.card-respons {
-        max-width: 100%;
-    }
-
-    section.card-respons .icone {
-        height: 200px;
-    }
-
-    section.card-respons h3 {
-        font-size: 1.4rem;
-    }
-
-    section.card-respons.regions h3 {
-        margin-top: 100px;
-        font-size: 1.4rem;
-    }
-
-    .info-regions {
-        font-size: 0.9rem;
-    }
-
-    .container-history,
-    .background-cards {
-        padding: 30px 10px;
-    }
-
-    .text-history,
-    .text-period,
-    .text-frase {
-        line-height: 1.6;
-    }
-
-    .box-phrase {
-        padding-left: 10px;
-    }
 }

@@ -22,7 +22,7 @@ body {
     overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* Navbar */
 #nav-bar {
     display: flex;
     height: 80px;
@@ -153,48 +153,7 @@ body {
     display: none;
 }
 
-.hamburger-container {
-    display: none;
-    z-index: 1001;
-}
-
-.hamburger {
-    cursor: pointer;
-}
-
-.hamburger input {
-    display: none;
-}
-
-.hamburger svg {
-    height: 2.5em;
-    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.line {
-    fill: none;
-    stroke: var(--primary-text-color);
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 3;
-    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.line-top-bottom {
-    stroke-dasharray: 12 63;
-}
-
-.hamburger input:checked+svg {
-    transform: rotate(-45deg);
-}
-
-.hamburger input:checked+svg .line-top-bottom {
-    stroke-dasharray: 20 300;
-    stroke-dashoffset: -32.42;
-}
-
-/* SLIDESHOW DE FUNDO */
+/* Slideshow De Fundo */
 .background-slideshow {
     position: fixed;
     top: 0;
@@ -235,13 +194,14 @@ body {
     pointer-events: none;
 }
 
-/* FORMULÁRIO CENTRALIZADO E ANIMAÇÃO */
+/* Formulário e Animação */
 main {
     position: relative;
     min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 120px; 
     padding-bottom: 80px;
     z-index: 3;
 }
@@ -364,7 +324,6 @@ body.sign-up-js .second-content {
     opacity: 0.8;
 }
 
-
 .form {
     display: flex;
     flex-direction: column;
@@ -459,15 +418,43 @@ body.sign-up-js .second-content {
 
 .password-strength {
     width: 100%;
-    margin: 6px 0 0 0;
-    height: 22px;
+    height: auto;
     display: none;
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
+    z-index: 1;
 }
 
 .password-strength.active {
     display: flex;
+}
+
+#strength-recommendations {
+    display: block;
+    width: 100%;
+    font-family: "Poppins";
+    background: rgba(200, 170, 110, 0.10);
+    border-left: 4px solid #f6e33d;
+    color: #f6e33d;
+    font-size: 0.97em;
+    padding: 6px 10px 0 12px;
+    margin: 0 0 2px 0;
+    line-height: 1.3;
+    min-height: 18px;
+    border-radius: 4px;
+}
+
+#strength-recommendations i {
+    color: #f6e33d;
+    margin-right: 6px;
+    font-size: 1.1em;
+    margin-top: 2px;
+}
+
+#strength-recommendations span {
+    font-weight: 600;
+    margin-right: 4px;
 }
 
 #strength-bar {
@@ -475,23 +462,24 @@ body.sign-up-js .second-content {
     height: 6px;
     border-radius: 4px;
     background: #333;
-    margin-bottom: 4px;
+    margin: 10px 0 2px 0;
     transition: background 0.3s;
 }
 
 #strength-text {
     font-size: 0.95em;
     color: #c8aa6e;
-    min-height: 16px;
+    margin: 0;
+    padding: 0;
 }
 
-/* FOOTER */
+/* Footer */
 footer {
     position: relative;
     width: 100vw;
     background: var(--background-nav);
     color: var(--primary-text-color);
-    margin-top: 60px;
+    margin-top: 50px;
     margin-bottom: 0;
     padding: 32px 0 0 0;
     text-align: center;
@@ -520,61 +508,4 @@ footer {
 
 #footer_social_media .footer-link:hover {
     color: #fff;
-}
-
-/* RESPONSIVO */
-@media (max-width: 1100px) {
-
-    .container,
-    .content {
-        width: 98vw;
-        min-width: unset;
-        max-width: 98vw;
-    }
-}
-
-@media (max-width: 900px) {
-    .content {
-        display: flex;
-        flex-direction: column;
-        min-width: 90vw;
-        width: 98vw;
-        max-width: 98vw;
-        min-height: unset;
-        height: auto;
-        padding: 0;
-    }
-
-    .first-column,
-    .second-column {
-        border-right: none;
-        border-bottom: 2px solid var(--accent-color);
-        padding: 32px 16px;
-    }
-
-    .first-column:last-child,
-    .second-column:last-child {
-        border-bottom: none;
-    }
-    
-}
-
-@media (max-width: 600px) {
-
-    .content,
-    .container {
-        min-width: 100vw;
-        width: 100vw;
-        border-radius: 0;
-        padding: 0;
-    }
-
-    .form {
-        max-width: 100%;
-    }
-
-    .first-column,
-    .second-column {
-        padding: 24px 6vw;
-    }
 }

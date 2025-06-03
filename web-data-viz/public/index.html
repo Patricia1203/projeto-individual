@@ -17,16 +17,17 @@
 </head>
 
 <body onload="validarSessao()">
-    <header id="nav-bar">
+     <!-- Navbar -->
+     <header id="nav-bar">
         <section class="box-nav logo-container">
             <img src="assets/imgs/logo-league.png" alt="" class="logo-league">
         </section>
         <section class="box-nav nav-links-container">
             <nav>
                 <ul class="box-nav row nav-links">
-                    <li class="box"><a href="index.html" class="link box active">Home</a></li>
+                    <li class="box"><a href="index.html" class="link box">Home</a></li>
                     <li class="box"><a href="#" class="link box">Campeãs</a></li>
-                    <li class="box" id="quiz-menu-item" style="display:none;"><a href="quiz.html" class="link box">Quiz</a></li>
+                    <li class="box" id="quiz-menu-item"><a href="quiz.html" class="link box active">Quiz</a></li>
                 </ul>
                 <ul class="box-nav row nav-buttons" id="login-cadastro-nav">
                     <li class="box nav-button-box"><a href="login_cad.html?mode=login"
@@ -40,8 +41,8 @@
                     <div class="sub-menu-wrap" id="subMenu">
                         <div class="sub-menu">
                             <div class="user-info">
-                                <img src="assets/icon/user1.jpg" alt="">
-                                <h2 id="user-name">Usuário</h2>
+                                <img src="assets/imgs/user1.jpg" alt="">
+                                <h2 id="user-name"></h2>
                             </div>
                             <hr>
                             <a href="#" class="sub-menu-link">
@@ -59,18 +60,8 @@
                 </div>
             </nav>
         </section>
-        <section class="box-nav hamburger-container">
-            <label class="hamburger">
-                <input type="checkbox" id="hamburger-checkbox">
-                <svg viewBox="0 0 32 32">
-                    <path class="line line-top-bottom"
-                        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
-                    </path>
-                    <path class="line" d="M7 16 27 16"></path>
-                </svg>
-            </label>
-        </section>
     </header>
+    
     <div class="card-img">
         <div class="slide-overlay">
             <h1>Explore Runeterra</h1>
