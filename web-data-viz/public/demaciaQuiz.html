@@ -17,7 +17,7 @@
 
 </head>
 
-<body onload="onloadEsconder(), validarSessao()">
+<body onload="validarSessao(); onloadEsconder()">
     <!-- Navbar -->
     <header id="nav-bar">
         <section class="box-nav logo-container">
@@ -71,6 +71,7 @@
                 honra e dever acima de tudo, conhecida por sua resistência à magia e seus poderosos guerreiros.</p>
         </div>
         <button class="quiz-btn" id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
+         <button class="quiz-btn" id="btnVoltar1" onclick="window.location.href='quiz.html'">Voltar</button>
 
         <!-- Bloco de perguntas do quiz -->
         <div id="jogo" style="display:none;">

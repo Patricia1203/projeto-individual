@@ -1,3 +1,4 @@
+const id_quiz = 1; 
 const listaDeQuestoes = [
     {
         pergunta: "Quem é o rei atual de Demacia?",
@@ -40,8 +41,3 @@ const listaDeQuestoes = [
         alternativaCorreta: "alternativaC"
     }
 ];
-
-let questaoAtual = 0;
-let certas = 0;
-let erradas = 0;
-let totalQuestoes = listaDeQuestoes.length;
