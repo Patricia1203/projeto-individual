@@ -23,7 +23,12 @@ function embaralharQuestoes() {
     }
 }
 
-function iniciarQuiz() {
+async function iniciarQuiz() {
+    await carregarQuestoes(); // Busca as perguntas do banco
+    window.iniciarQuizRegiao();
+}
+
+function iniciarQuizRegiao() {
     questaoAtual = 0;
     certas = 0;
     erradas = 0;
@@ -157,13 +162,13 @@ function finalizarQuiz() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id_usuario, id_quiz, pontos })
         })
-        .then(res => res.json())
-        .then(data => {
-            // Sucesso ao salvar resultado
-            console.log("Resultado salvo!", data);
-        })
-        .catch(err => {
-            console.error("Erro ao salvar resultado:", err);
-        });
+            .then(res => res.json())
+            .then(data => {
+                // Sucesso ao salvar resultado
+                console.log("Resultado salvo!", data);
+            })
+            .catch(err => {
+                console.error("Erro ao salvar resultado:", err);
+            });
     }
 }

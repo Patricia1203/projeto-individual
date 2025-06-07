@@ -1,5 +1,13 @@
 var database = require("../database/config");
 
+function buscarPerguntas(id_quiz) {
+     //RAND - reordenando os resultados aleatoriamente.
+    var sql = `
+        SELECT id_pergunta, pergunta, alternativa_a, alternativa_b, alternativa_c, alternativa_d, alternativaCorreta FROM pergunta WHERE id_quiz = ${id_quiz} ORDER BY RAND() LIMIT 7;
+    `;
+    return database.executar(sql);
+}
+
 
 function salvarResultado(id_usuario, id_quiz, pontos) {
     // Buscar a maior tentativa já registrada do usuario para fazer o incremento de tentativas;
@@ -23,5 +31,6 @@ function salvarResultado(id_usuario, id_quiz, pontos) {
 }
 
 module.exports = {
+    buscarPerguntas,
     salvarResultado
 }

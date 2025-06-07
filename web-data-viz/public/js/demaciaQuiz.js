@@ -1,43 +1,32 @@
 const id_quiz = 1; 
-const listaDeQuestoes = [
-    {
-        pergunta: "Quem é o rei atual de Demacia?",
-        alternativaA: "Jarvan IV",
-        alternativaB: "Garen",
-        alternativaC: "Lux",
-        alternativaD: "Vayne",
-        alternativaCorreta: "alternativaA"
-    },
-    {
-        pergunta: "Qual é o lema de Demacia?",
-        alternativaA: "Força acima de tudo",
-        alternativaB: "Justiça e Honra",
-        alternativaC: "Magia e Harmonia",
-        alternativaD: "Tecnologia e Progresso",
-        alternativaCorreta: "alternativaB"
-    },
-    {
-        pergunta: "Qual destes campeões NÃO é de Demacia?",
-        alternativaA: "Fiora",
-        alternativaB: "Lucian",
-        alternativaC: "Sona",
-        alternativaD: "Quinn",
-        alternativaCorreta: "alternativaC"
-    },
-    {
-        pergunta: "Qual é a relação entre Garen e Lux?",
-        alternativaA: "Primos",
-        alternativaB: "Irmãos",
-        alternativaC: "Sem parentesco",
-        alternativaD: "Casados",
-        alternativaCorreta: "alternativaB"
-    },
-    {
-        pergunta: "Demacia é conhecida por ser:",
-        alternativaA: "Um império expansionista",
-        alternativaB: "Uma terra de magia proibida",
-        alternativaC: "Um reino de justiça e ordem",
-        alternativaD: "Uma cidade submersa",
-        alternativaCorreta: "alternativaC"
+let listaDeQuestoes = [];
+
+async function carregarQuestoes() {
+    try {
+        const resp = await fetch(`/quizzes/perguntas/${id_quiz}`);
+    
+        // Retorna as 7 perguntas aleatórias.
+        const questoesRecebidas = await resp.json();
+
+        listaDeQuestoes = questoesRecebidas.map(q => ({
+            pergunta: q.pergunta,
+            alternativaA: q.alternativa_a,
+            alternativaB: q.alternativa_b,
+            alternativaC: q.alternativa_c,
+            alternativaD: q.alternativa_d,
+            alternativaCorreta: q.alternativaCorreta
+        }));
+
+        totalQuestoes = listaDeQuestoes.length;
+        if (totalQuestoes === 0) {
+            console.log("Nenhuma questão encontrada para o quiz.");
+
+        } else {
+            iniciarQuizRegiao(); // Inicia o quiz com as questões recebidas.
+        }
+
+    } catch (error) {
+        console.error("Falha ao carregar as questões:", error);
     }
-];
+}
+

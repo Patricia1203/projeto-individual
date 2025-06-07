@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Noxus</title>
+    <link rel="stylesheet" href="css/quizRegioes.css">
+    <link rel="stylesheet" href="css/noxusQuiz.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body onload="validarSessao(); onloadEsconder()">
+    <!-- Navbar -->
+    <header id="nav-bar">
+        <section class="box-nav logo-container">
+            <img src="assets/imgs/logo-league.png" alt="" class="logo-league">
+        </section>
+        <section class="box-nav nav-links-container">
+            <nav>
+                <ul class="box-nav row nav-links">
+                    <li class="box"><a href="index.html" class="link box">Home</a></li>
+                    <li class="box"><a href="#" class="link box">Campeãs</a></li>
+                    <li class="box" id="quiz-menu-item"><a href="quiz.html" class="link box active">Quiz</a></li>
+                </ul>
+                <ul class="box-nav row nav-buttons" id="login-cadastro-nav">
+                    <li class="box nav-button-box"><a href="login_cad.html?mode=login"
+                            class="link nav-button login">Login</a></li>
+                    <li class="box nav-button-box"><a href="login_cad.html?mode=cadastro"
+                            class="link nav-button regist">Cadastro</a></li>
+                </ul>
+                <div id="user-menu-nav" style="display:none;">
+                    <span id="b_usuario"></span>
+                    <img src="assets/icon/user1.jpg" class="user-pic" onclick="toggleMenu()">
+                    <div class="sub-menu-wrap" id="subMenu">
+                        <div class="sub-menu">
+                            <div class="user-info">
+                                <img src="assets/imgs/user1.jpg" alt="">
+                                <h2 id="user-name"></h2>
+                            </div>
+                            <hr>
+                            <a href="#" class="sub-menu-link">
+                                <i class="fa-solid fa-user"></i>
+                                <p>Perfil</p>
+                                <span></span>
+                            </a>
+                            <a href="#" class="sub-menu-link" onclick="limparSessao()">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <p>Sair</p>
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </section>
+    </header>
+
+
+    <div class="quiz-container">
+        <div class="noxus-header">
+            <h1>QUIZ <span class="text-gold">NOXUS</span></h1>
+            <p>Teste seus conhecimentos sobre o império de Noxus, uma potência expansionista e meritocrática que valoriza força, ambição e poder acima de tudo, conhecida por seus brutais guerreiros, táticas implacáveis e sua filosofia de que apenas os mais fortes devem governar.</p>
+        </div>
+        <button class="quiz-btn" id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
+         <button class="quiz-btn" id="btnVoltar1" onclick="window.location.href='quiz.html'">Voltar</button>
+
+        <!-- Bloco de perguntas do quiz -->
+        <div id="jogo" style="display:none;">
+            <div class="question-info">
+                <span>Questão <span id="questaoAtual"></span> de <span id="totalQuestoes"></span></span>
+            </div>
+            <div class="question-text">
+                <span id="pergunta"></span>
+            </div>
+            <div class="options-container">
+                <span>
+                    <input type="radio" id="opcaoA" name="option" value="alternativaA" />
+                    <label for="opcaoA" id="labelA"></label>
+                </span>
+                <span>
+                    <input type="radio" id="opcaoB" name="option" value="alternativaB" />
+                    <label for="opcaoB" id="labelB"></label>
+                </span>
+                <span>
+                    <input type="radio" id="opcaoC" name="option" value="alternativaC" />
+                    <label for="opcaoC" id="labelC"></label>
+                </span>
+                <span>
+                    <input type="radio" id="opcaoD" name="option" value="alternativaD" />
+                    <label for="opcaoD" id="labelD"></label>
+                </span>
+            </div>
+            <div class="quiz-actions">
+                <button class="quiz-btn" id="btnSubmeter" onclick="submeter()">Submeter resposta</button>
+                <button class="quiz-btn" id="btnProx" onclick="avancar()">Próxima questão</button>
+            </div>
+        </div>
+
+        <!-- Bloco de resultado final -->
+        <div id="pontuacao" style="display:none;">
+            <div class="score-container">
+                <span class="final-score">
+                    Pontuação Final: <span id="pontuacaoNumero">0</span>
+                </span>
+                <span id="msgFinal"></span>
+                <div class="score-summary">
+                    <div class="score-card">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span id="finalCertas">0</span>
+                        <label>Acertos</label>
+                    </div>
+                    <div class="score-card">
+                        <i class="fa-solid fa-times-circle"></i>
+                        <span id="finalErradas">0</span>
+                        <label>Erros</label>
+                    </div>
+                </div>
+                <div class="quiz-actions">
+                    <button class="quiz-btn" id="btnTentarNovamente" onclick="tentarNovamente()">Tentar
+                        novamente</button>
+                    <button class="quiz-btn" id="btnVoltar" onclick="window.location.href='quiz.html'">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/sessao.js"></script>
+<script src="js/noxusQuiz.js"></script>
+<script src="js/quizRegioes.js"></script>
+
+</html>
