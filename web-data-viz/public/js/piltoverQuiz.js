@@ -1,11 +1,10 @@
-const id_quiz = 4; 
+const id_quiz = 6; 
 let listaDeQuestoes = [];
 
 async function carregarQuestoes() {
     try {
         const resp = await fetch(`/quizzes/perguntas/${id_quiz}`);
     
-        
         const questoesRecebidas = await resp.json();
 
         listaDeQuestoes = questoesRecebidas.map(q => ({

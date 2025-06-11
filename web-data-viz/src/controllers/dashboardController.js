@@ -26,9 +26,9 @@ function percentualAcertos(req, res) {
         });
 }
 
-function regiaoMaisAcertos(req, res) {
+function quizMaisAcertado(req, res) {
     const id_usuario = req.params.id_usuario;
-    dashboardModel.regiaoMaisAcertos(id_usuario)
+    dashboardModel.quizMaisAcertado(id_usuario)
         .then(resultado => res.json(resultado[0]))
         .catch(erro => {
             console.log(erro);
@@ -48,6 +48,6 @@ function totalQuizzesRespondidos(req, res) {
 module.exports = {
     totalPontosUsuario,
     percentualAcertos,
-    regiaoMaisAcertos,
+    quizMaisAcertado,
     totalQuizzesRespondidos
 }

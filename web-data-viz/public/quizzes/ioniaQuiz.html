@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz - Noxus</title>
-    <link rel="stylesheet" href="css/quizRegioes.css">
-    <link rel="stylesheet" href="css/noxusQuiz.css">
+    <title>Quiz - Ionia</title>
+    <link rel="stylesheet" href="../css/quizzes/quizRegioes.css">
+    <link rel="stylesheet" href="../css/quizzes/ioniaQuiz.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,14 +21,14 @@
     <!-- Navbar -->
     <header id="nav-bar">
         <section class="box-nav logo-container">
-            <img src="assets/imgs/logo-league.png" alt="" class="logo-league">
+            <img src="../assets/imgs/logo-league.png" alt="" class="logo-league">
         </section>
         <section class="box-nav nav-links-container">
             <nav>
                 <ul class="box-nav row nav-links">
                     <li class="box"><a href="index.html" class="link box">Home</a></li>
                     <li class="box"><a href="#" class="link box">Campeãs</a></li>
-                    <li class="box" id="quiz-menu-item"><a href="quiz.html" class="link box active">Quiz</a></li>
+                    <li class="box" id="quiz-menu-item"><a href="../quiz.html" class="link box active">Quiz</a></li>
                 </ul>
                 <ul class="box-nav row nav-buttons" id="login-cadastro-nav">
                     <li class="box nav-button-box"><a href="login_cad.html?mode=login"
@@ -38,11 +38,11 @@
                 </ul>
                 <div id="user-menu-nav" style="display:none;">
                     <span id="b_usuario"></span>
-                    <img src="assets/icon/user1.jpg" class="user-pic" onclick="toggleMenu()">
+                    <img src="../assets/icon/user1.jpg" class="user-pic" onclick="toggleMenu()">
                     <div class="sub-menu-wrap" id="subMenu">
                         <div class="sub-menu">
                             <div class="user-info">
-                                <img src="assets/imgs/user1.jpg" alt="">
+                                <img src="../assets/imgs/user1.jpg" alt="">
                                 <h2 id="user-name"></h2>
                             </div>
                             <hr>
@@ -65,12 +65,12 @@
 
 
     <div class="quiz-container">
-        <div class="noxus-header">
-            <h1>QUIZ <span class="text-gold">NOXUS</span></h1>
-            <p>Teste seus conhecimentos sobre o império de Noxus, uma potência expansionista e meritocrática que valoriza força, ambição e poder acima de tudo, conhecida por seus brutais guerreiros, táticas implacáveis e sua filosofia de que apenas os mais fortes devem governar.</p>
+        <div class="ionia-header">
+            <h1>QUIZ <span class="text-gold">Ionia</span></h1>
+            <p>Teste seus conhecimentos sobre o reino de Ionia, uma terra de equilíbrio espiritual, natureza exuberante e tradições ancestrais, marcada por sua busca de harmonia, artes marciais e resistência diante de invasões e conflitos.</p>
         </div>
-        <button class="quiz-btn" id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
-         <button class="quiz-btn" id="btnVoltar1" onclick="window.location.href='quiz.html'">Voltar</button>
+        <button class="quiz-btn" id="btnIniciarQuiz" onclick="carregarQuestoes()">INICIAR QUIZ</button>
+         <button class="quiz-btn" id="btnVoltar1" onclick="window.location.href='../quiz.html'">Voltar</button>
 
         <!-- Bloco de perguntas do quiz -->
         <div id="jogo" style="display:none;">
@@ -126,14 +126,14 @@
                 <div class="quiz-actions">
                     <button class="quiz-btn" id="btnTentarNovamente" onclick="tentarNovamente()">Tentar
                         novamente</button>
-                    <button class="quiz-btn" id="btnVoltar" onclick="window.location.href='quiz.html'">Voltar</button>
+                    <button class="quiz-btn" id="btnVoltar" onclick="window.location.href='../quiz.html'">Voltar</button>
                 </div>
             </div>
         </div>
-    </div>
+    </div
 </body>
-<script src="js/sessao.js"></script>
-<script src="js/noxusQuiz.js"></script>
-<script src="js/quizRegioes.js"></script>
+<script src="../js/sessao.js"></script>
+<script src="../js/ioniaQuiz.js"></script>
+<script src="../js/quizRegioes.js"></script>
 
 </html>

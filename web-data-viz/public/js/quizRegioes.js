@@ -25,10 +25,10 @@ function embaralharQuestoes() {
 
 async function iniciarQuiz() {
     await carregarQuestoes(); // Busca as perguntas do banco
-    window.iniciarQuizRegiao();
+    window.iniciarQuiz();
 }
 
-function iniciarQuizRegiao() {
+function iniciarQuiz() {
     questaoAtual = 0;
     certas = 0;
     erradas = 0;

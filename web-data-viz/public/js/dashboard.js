@@ -32,15 +32,15 @@ function buscarDadosDashboard(idUsuario) {
             document.getElementById('kpi-acerto').textContent = '0%';
         });
 
-    // Região com Mais Acertos
-    fetch(`/dashboard/regiao-mais-acertos/${idUsuario}`)
+    // Quiz com Mais Acertos
+    fetch(`/dashboard/quiz-mais-acertos/${idUsuario}`)
         .then(response => response.json())
         .then(data => {
-            document.getElementById('kpi-regiao').textContent = data.nome_regiao || 'Nenhuma região';
+            document.getElementById('kpi-quiz').textContent = data.titulo_quiz || 'Nenhum quiz';
         })
         .catch(error => {
-            console.error('Erro ao buscar região:', error);
-            document.getElementById('kpi-regiao').textContent = 'Nenhuma região';
+            console.error('Erro ao buscar quiz:', error);
+            document.getElementById('kpi-quiz').textContent = 'Nenhum quiz';
         });
 
     // Total de Quizzes Respondidos

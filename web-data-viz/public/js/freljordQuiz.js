@@ -22,7 +22,7 @@ async function carregarQuestoes() {
             console.log("Nenhuma questão encontrada para o quiz.");
 
         } else {
-            iniciarQuizRegiao(); 
+            iniciarQuiz(); 
         }
 
     } catch (error) {

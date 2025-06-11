@@ -22,15 +22,14 @@ function percentualAcertos(id_usuario) {
     return database.executar(instrucaoSql);
 }
 
-// Retorna a região que mais teve acertos das perguntas
-function regiaoMaisAcertos(id_usuario) {
+// Retorna a quiz que mais teve acertos das perguntas
+function quizMaisAcertado(id_usuario) {
     var instrucaoSql = `
-        SELECT r.nome_regiao, SUM(ru.pontos) AS total_pontos
+        SELECT q.titulo_quiz, SUM(ru.pontos) AS total_pontos
         FROM resposta_usuario ru
         JOIN quiz q ON ru.id_quiz = q.id_quiz
-        JOIN regiao r ON q.id_regiao = r.id_regiao
         WHERE ru.id_usuario = ${id_usuario}
-        GROUP BY r.nome_regiao
+        GROUP BY q.titulo_quiz
         ORDER BY total_pontos DESC
         LIMIT 1;
     `;
@@ -50,6 +49,6 @@ function totalQuizzesRespondidos(id_usuario) {
 module.exports = {
     totalPontosUsuario,
     percentualAcertos,
-    regiaoMaisAcertos,
+    quizMaisAcertado,
     totalQuizzesRespondidos
 }

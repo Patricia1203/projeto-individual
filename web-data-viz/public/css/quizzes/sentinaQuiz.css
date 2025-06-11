@@ -1,7 +1,7 @@
-.piltover-header {
+.sentina-header {
     margin: 0 0 2rem 0;
-    background: linear-gradient(to bottom, rgba(78, 78, 78, 0.4), rgb(73, 72, 72)),
-        url(../assets/imgs/piltover2.webp) no-repeat center center;
+    background: linear-gradient(to bottom, rgba(0, 30, 5, 0.7), rgb(0, 0, 0)),
+        url(../../assets/imgs/aguas-de-sentina2.jpg) no-repeat center center;
     background-size: cover;
     color: #f5e9d6;
     padding: 2rem;
@@ -10,15 +10,15 @@
     border-top-right-radius: 16px;
 }
 
-.piltover-header h1 {
+.sentina-header h1 {
     font-family: 'Beaufort for LOL', serif;
     font-weight: 700;
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 8px #3b393b, 0 0 8px #000;
+    text-shadow: 2px 2px 8px #052d0f, 0 0 8px #000;
 }
 
-.piltover-header p {
+.sentina-header p {
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto;
