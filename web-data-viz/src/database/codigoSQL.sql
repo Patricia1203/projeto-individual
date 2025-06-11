@@ -7,7 +7,8 @@ CREATE TABLE usuario (
     nome VARCHAR(255) NOT NULL,
     nickname VARCHAR(100) NULL UNIQUE,
     email VARCHAR(255) NOT NULL UNIQUE,
-    senha VARCHAR(255) NOT NULL
+    senha VARCHAR(255) NOT NULL,
+	preferencia_ranking ENUM('nick', 'nome', 'anonimo') DEFAULT 'nick'	
 );
 
 CREATE TABLE quiz (
@@ -48,12 +49,12 @@ CREATE INDEX idx_respostasusuario_usuario_quiz ON resposta_usuario(id_usuario, i
 
 
 INSERT INTO quiz (titulo_quiz, descricao_quiz, nivel_dificuldade, total_pontos_possivel) VALUES
-('Demacia: Conhecimentos Gerais', 'Quiz sobre o reino de Demacia', 'Fácil', 112), -- 16 cada pergunta
-('Noxus: História do Império', 'Quiz sobre a história e cultura de Noxus', 'Médio', 182), -- 26 cada pergunta
-('Freljord: Tribos e Lendas', 'Quiz sobre as tribos e lendas do Freljord', 'Difícil', 245), -- 35 cada pergunta
-('Ionia: Magia e Natureza', 'Quiz sobre a espiritualidade de Ionia', 'Médio', 182), -- 26 cada pergunta
-('Águas de Sentina: Crime e Oportunidade', 'Quiz sobre o submundo do crime em Águas de Sentina', 'Difícil', 245), -- 35 cada pergunta
-('Piltover: Inovação e Progresso', 'Quiz sobre a cidade de Piltover e seus avanços tecnológicos', 'Fácil', 112); -- 16 cada pergunta
+('Demacia', 'Quiz sobre o reino de Demacia', 'Fácil', 112), -- 16 cada pergunta
+('Noxu', 'Quiz sobre a história e cultura de Noxus', 'Médio', 182), -- 26 cada pergunta
+('Freljord', 'Quiz sobre as tribos e lendas do Freljord', 'Difícil', 245), -- 35 cada pergunta
+('Ionia', 'Quiz sobre a espiritualidade de Ionia', 'Médio', 182), -- 26 cada pergunta
+('Águas de Sentina', 'Quiz sobre o submundo do crime em Águas de Sentina', 'Difícil', 245), -- 35 cada pergunta
+('Piltover', 'Quiz sobre a cidade de Piltover e seus avanços tecnológicos', 'Fácil', 112); -- 16 cada pergunta
 
 -- Demacia.
 INSERT INTO pergunta (id_quiz, pergunta, alternativa_a, alternativa_b, alternativa_c, alternativa_d, alternativaCorreta) VALUES

@@ -41,7 +41,14 @@ function pontosPorQuizUsuario(id_usuario) {
 
 function rankingGeral() {
     var instrucaoSql = `
-        SELECT u.id_usuario, COALESCE(u.nickname, u.nome) AS nome_exibicao, SUM(ru.pontos) AS total_pontos FROM usuario u LEFT JOIN resposta_usuario ru ON u.id_usuario = ru.id_usuario GROUP BY u.id_usuario, nome_exibicao ORDER BY total_pontos DESC;
+        SELECT u.id_usuario,
+            CASE 
+                WHEN u.preferencia_ranking = 'nick' THEN u.nickname
+                WHEN u.preferencia_ranking = 'nome' THEN u.nome
+                ELSE 'Anônimo'
+            END AS nome_exibicao,
+            SUM(ru.pontos) AS total_pontos
+        FROM usuario u LEFT JOIN resposta_usuario ru ON u.id_usuario = ru.id_usuario GROUP BY u.id_usuario, nome_exibicao ORDER BY total_pontos DESC;
     `;
     return database.executar(instrucaoSql);
 }

@@ -12,4 +12,12 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+router.put("/preferencia-ranking/:id_usuario", function (req, res) {
+    usuarioController.atualizarPreferenciaRanking(req, res);
+});
+
+router.get("/preferencia-ranking/:id_usuario", function (req, res) {
+    usuarioController.buscarPreferenciaRanking(req, res);
+});
+
 module.exports = router;

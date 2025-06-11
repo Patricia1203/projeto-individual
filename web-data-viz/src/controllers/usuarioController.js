@@ -67,7 +67,36 @@ function cadastrar(req, res) {
     }
 }
 
+function atualizarPreferenciaRanking(req, res) {
+    const id_usuario = req.params.id_usuario;
+    const { preferencia } = req.body;
+    usuarioModel.atualizarPreferenciaRanking(id_usuario, preferencia)
+        .then(() => res.status(200).send())
+        .catch(erro => {
+            console.log(erro);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
+function buscarPreferenciaRanking(req, res) {
+    const id_usuario = req.params.id_usuario;
+    usuarioModel.buscarPreferenciaRanking(id_usuario)
+        .then(resultado => {
+            if (resultado.length > 0) {
+                res.json(resultado[0]);
+            } else {
+                res.json({ preferencia_ranking: "nick" });
+            }
+        })
+        .catch(erro => {
+            console.log(erro);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    buscarPreferenciaRanking,
+    atualizarPreferenciaRanking
 }

@@ -22,7 +22,23 @@ function cadastrar(nome, nickname, email, senha) {
     return database.executar(instrucaoSql);
 }
 
+function atualizarPreferenciaRanking(id_usuario, preferencia) {
+    var instrucaoSql = `
+        UPDATE usuario SET preferencia_ranking = '${preferencia}' WHERE id_usuario = ${id_usuario};
+    `;
+    return database.executar(instrucaoSql);
+}
+
+function buscarPreferenciaRanking(id_usuario) {
+    var instrucaoSql = `
+        SELECT preferencia_ranking FROM usuario WHERE id_usuario = ${id_usuario};
+    `;
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    buscarPreferenciaRanking,
+    atualizarPreferenciaRanking
 };

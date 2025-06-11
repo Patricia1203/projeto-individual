@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const idUsuario = sessionStorage.ID_USUARIO;
         buscarDadosDashboard(idUsuario);
         obterDadosBarra();
-        carregarRankingGeral();
+        carregarPreferenciaRanking(carregarRankingGeral);
     }
 });
 
@@ -113,8 +113,27 @@ function plotarGraficoBarra(dados) {
     });
 }
 
+// Carregar preferências de ranking do usuário
+function carregarPreferenciaRanking(callback) {
+    const idUsuario = sessionStorage.ID_USUARIO;
+    fetch(`/usuarios/preferencia-ranking/${idUsuario}`)
+
+        .then(res => res.json())
+        .then(data => {
+
+            const select = document.getElementById('opcao-nome-ranking');
+            if (data && data.preferencia_ranking) {
+                select.value = data.preferencia_ranking;
+            }
+            if (callback) callback();
+        })
+        .catch(() => {
+            if (callback) callback();
+        });
+}
+
 function carregarRankingGeral() {
-    fetch("/dashboard/ranking-geral", {
+   fetch("/dashboard/ranking-geral", {
         method: "GET",
         headers: {
             "Content-Type": "application/json"
@@ -129,9 +148,21 @@ function carregarRankingGeral() {
     })
     .then(function (ranking) {
         exibirRanking(ranking);
-        document.getElementById('opcao-nome-ranking').addEventListener('change', function() {
-            exibirRanking(ranking);
-        });
+
+        // Adicione o event listener aqui, só uma vez!
+        const select = document.getElementById('opcao-nome-ranking');
+        select.onchange = function() {
+            const preferencia = this.value;
+            const idUsuario = sessionStorage.ID_USUARIO;
+            fetch(`/usuarios/preferencia-ranking/${idUsuario}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ preferencia })
+            }).then(() => {
+                // Após salvar, recarregue o ranking do back-end
+                carregarRankingGeral();
+            });
+        };
     })
     .catch(function (erro) {
         console.log(`#ERRO: ${erro}`);
@@ -141,14 +172,9 @@ function carregarRankingGeral() {
 }
 
 function exibirRanking(ranking) {
-    const opcao = document.getElementById('opcao-nome-ranking').value;
     const ul = document.getElementById('ranking-geral-list');
     ul.innerHTML = '';
     ranking.forEach((item, idx) => {
-        let nome = '';
-        if (opcao === 'nick') nome = item.nome_exibicao;
-        else if (opcao === 'nome') nome = item.nome_exibicao; // Se nick não existir, já vem nome
-        else nome = 'Anônimo';
-        ul.innerHTML += `<li>#${idx + 1} <span>${nome}</span> <span>${item.total_pontos || 0} pts</span></li>`;
+        ul.innerHTML += `<li>#${idx + 1} <span>${item.nome_exibicao}</span> <span>${item.total_pontos || 0} pts</span></li>`;
     });
 }
