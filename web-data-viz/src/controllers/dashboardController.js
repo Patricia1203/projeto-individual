@@ -45,9 +45,21 @@ function totalQuizzesRespondidos(req, res) {
             res.status(500).json(erro.sqlMessage);
         });
 }
+
+function pontosPorQuizUsuario(req, res) {
+    const id_usuario = req.params.id_usuario;
+    dashboardModel.pontosPorQuizUsuario(id_usuario)
+        .then(resultado => res.json(resultado))
+        .catch(erro => {
+            console.log(erro);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
 module.exports = {
     totalPontosUsuario,
     percentualAcertos,
     quizMaisAcertado,
-    totalQuizzesRespondidos
+    totalQuizzesRespondidos,
+    pontosPorQuizUsuario
 }

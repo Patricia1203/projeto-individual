@@ -46,9 +46,22 @@ function totalQuizzesRespondidos(id_usuario) {
     return database.executar(instrucaoSql);
 }
 
+function pontosPorQuizUsuario(id_usuario) {
+    var instrucaoSql = `
+        SELECT q.titulo_quiz, IFNULL(SUM(ru.pontos), 0) AS pontos
+        FROM quiz q
+        LEFT JOIN resposta_usuario ru ON q.id_quiz = ru.id_quiz AND ru.id_usuario = ${id_usuario}
+        GROUP BY q.titulo_quiz
+        ORDER BY q.titulo_quiz;
+    `;
+    return database.executar(instrucaoSql);
+}
+
+
 module.exports = {
     totalPontosUsuario,
     percentualAcertos,
     quizMaisAcertado,
-    totalQuizzesRespondidos
+    totalQuizzesRespondidos,
+    pontosPorQuizUsuario
 }

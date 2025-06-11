@@ -12,6 +12,7 @@
     --annie-color: #ff4545;
     --lux-color: #f8e16c;
     --fidlesticks-color: #74251e;
+    --demacia-color: #0068bd;
     --seraphine-color: #ff7bac;
     --sentina-color: #3c7a3c;
     ---runeterra-color: #1a1a1a;
@@ -61,7 +62,7 @@ body {
 }
 
 .demacia-color {
-    color: var(--lux-color);
+    color: var(--demacia-color );
 }
 
 .noxus-color {
@@ -995,7 +996,7 @@ section.card-respons.regions .icone-cards-regions img {
 }
 
 .icone-cards-regions.demacia-bg::before {
-    background-image: linear-gradient(to top, rgba(10, 20, 40, 1) 0%, rgba(248, 255, 108, 0.2) 100%);
+    background-image: linear-gradient(to top, rgba(10, 20, 40, 1) 0%, rgba(108, 208, 255, 0.2) 100%);
 }
 
 .icone-cards-regions.noxus-bg::before {
@@ -1045,12 +1046,12 @@ section.card-respons.regions button {
 }
 
 section.card-respons.regions.demacia {
-    border: 2px solid var(--lux-color);
+    border: 2px solid var(--demacia-color);
     box-shadow: 0 0 15px -5px var(--lux-color);
 }
 
 section.card-respons.regions.demacia button {
-    background-color: var(--lux-color);
+    background-color: var(--demacia-color);
 }
 
 section.card-respons.regions.noxus {
