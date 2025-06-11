@@ -13,12 +13,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body onload="validarSessao()">
-     <!-- Navbar -->
-     <header id="nav-bar">
+    <!-- Navbar -->
+    <header id="nav-bar">
         <section class="box-nav logo-container">
             <img src="assets/imgs/logo-league.png" alt="" class="logo-league">
         </section>
@@ -85,8 +85,20 @@
                 </div>
                 <div class="dashboard-ranking">
                     <h4>Ranking Geral</h4>
-                    <ul class="ranking-list" id="ranking-list">
-                    </ul>
+                    <div class="ranking-header">
+                        <span>Posição</span>
+                        <span>Invocador</span>
+                        <span>Pontos Total</span>
+                    </div>
+                    <ul class="ranking-list" id="ranking-geral-list"></ul>
+                    <div class="ranking-nome-opcao">
+                        <label>Como você quer aparecer no ranking?</label>
+                        <select id="opcao-nome-ranking">
+                            <option value="nick">Nick</option>
+                            <option value="nome">Nome</option>
+                            <option value="anonimo">Anônimo</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,7 +111,7 @@
                         <img src="assets/imgs/demacia.webp" alt="Demacia">
                         <div class="quiz-info">
                             <h3>Demacia<br>
-                            Nível - Fácil</h3>
+                                Nível - Fácil</h3>
                             <p>Se desafie no reino da justiça e honra!</p>
                             <a href="quizzes/demaciaQuiz.html" class="quiz-btn">Começar Quiz</a>
                         </div>
@@ -108,7 +120,7 @@
                         <img src="assets/imgs/noxus.webp" alt="Noxus">
                         <div class="quiz-info">
                             <h3>Noxus<br>
-                            Nível - Médio</h3>
+                                Nível - Médio</h3>
                             <p>Você conhece o império da força e ambição?</p>
                             <a href="quizzes/noxusQuiz.html" class="quiz-btn">Começar Quiz</a>
                         </div>
@@ -117,7 +129,7 @@
                         <img src="assets/imgs/ionia.webp" alt="Ionia">
                         <div class="quiz-info">
                             <h3>Ionia<br>
-                            Nível - Médio</h3>
+                                Nível - Médio</h3>
                             <p>O quanto você sabe sobre a terra da magia e harmonia?</p>
                             <a href="quizzes/ioniaQuiz.html" class="quiz-btn">Começar Quiz</a>
                         </div>
@@ -126,7 +138,7 @@
                         <img src="assets/imgs/freljord.webp" alt="Freljord">
                         <div class="quiz-info">
                             <h3>Freljord<br>
-                            Nível - Difícil</h3>
+                                Nível - Difícil</h3>
                             <p>Desafie-se no reino do gelo e da guerra!</p>
                             <a href="quizzes/freljordQuiz.html" class="quiz-btn">Começar Quiz</a>
                         </div>
@@ -135,7 +147,7 @@
                         <img src="assets/imgs/aguas-de-sentina.jpg" alt="Águas de Sentina">
                         <div class="quiz-info">
                             <h3>Águas de Sentina<br>
-                            Nível - Díficil</h3>
+                                Nível - Díficil</h3>
                             <p>Você é um verdadeiro pirata de Águas de Sentina?</p>
                             <a href="quizzes/sentinaQuiz.html" class="quiz-btn">Começar Quiz</a>
                         </div>
@@ -144,7 +156,7 @@
                         <img src="assets/imgs/piltover-zaun.webp" alt="Piltover & Zaun">
                         <div class="quiz-info">
                             <h3>Piltover<br>
-                            Nível - Fácil</h3>
+                                Nível - Fácil</h3>
                             <p>Teste seu conhecimento sobre a inovação e progressão de Piltover</p>
                             <a href="quizzes/piltoverQuiz.html" class="quiz-btn">Começar Quiz</a>
                         </div>

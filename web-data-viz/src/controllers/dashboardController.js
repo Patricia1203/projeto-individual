@@ -56,10 +56,20 @@ function pontosPorQuizUsuario(req, res) {
         });
 }
 
+function rankingGeral(req, res) {
+    dashboardModel.rankingGeral()
+        .then(resultado => res.json(resultado))
+        .catch(erro => {
+            console.log(erro);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
 module.exports = {
     totalPontosUsuario,
     percentualAcertos,
     quizMaisAcertado,
     totalQuizzesRespondidos,
-    pontosPorQuizUsuario
+    pontosPorQuizUsuario,
+    rankingGeral
 }

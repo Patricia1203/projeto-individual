@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const idUsuario = sessionStorage.ID_USUARIO;
         buscarDadosDashboard(idUsuario);
         obterDadosBarra();
+        carregarRankingGeral();
     }
 });
 
@@ -109,5 +110,45 @@ function plotarGraficoBarra(dados) {
                 y: { beginAtZero: true }
             }
         }
+    });
+}
+
+function carregarRankingGeral() {
+    fetch("/dashboard/ranking-geral", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(function (resposta) {
+        if (resposta.ok) {
+            return resposta.json();
+        } else {
+            throw "Houve um erro ao tentar buscar o ranking geral!";
+        }
+    })
+    .then(function (ranking) {
+        exibirRanking(ranking);
+        document.getElementById('opcao-nome-ranking').addEventListener('change', function() {
+            exibirRanking(ranking);
+        });
+    })
+    .catch(function (erro) {
+        console.log(`#ERRO: ${erro}`);
+        const ul = document.getElementById('ranking-geral-list');
+        ul.innerHTML = '<li>Não foi possível carregar o ranking.</li>';
+    });
+}
+
+function exibirRanking(ranking) {
+    const opcao = document.getElementById('opcao-nome-ranking').value;
+    const ul = document.getElementById('ranking-geral-list');
+    ul.innerHTML = '';
+    ranking.forEach((item, idx) => {
+        let nome = '';
+        if (opcao === 'nick') nome = item.nome_exibicao;
+        else if (opcao === 'nome') nome = item.nome_exibicao; // Se nick não existir, já vem nome
+        else nome = 'Anônimo';
+        ul.innerHTML += `<li>#${idx + 1} <span>${nome}</span> <span>${item.total_pontos || 0} pts</span></li>`;
     });
 }

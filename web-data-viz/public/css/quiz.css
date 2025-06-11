@@ -326,6 +326,28 @@ body {
     font-size: 1.1rem;
 }
 
+.ranking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: var(--accent-color);
+    padding: 8px 0 4px 0;
+    border-bottom: 2px solid #222;
+    font-size: 1rem;
+    margin-bottom: 2px;
+    gap: 8px;
+}
+.ranking-header span:nth-child(1) {
+    width: 70px;
+    text-align: left;
+}
+.ranking-header span:nth-child(2) {
+    flex: 1;
+    text-align: left;
+    padding-left: 12px;
+}
+
 .ranking-list {
     list-style: none;
     padding: 0;
@@ -345,6 +367,22 @@ body {
     min-width: 60px;
     text-align: right;
 }
+
+.ranking-nome-opcao {
+    margin-bottom: 12px;
+    color: var(--primary-text-color);
+}
+.ranking-nome-opcao label {
+    margin-right: 8px;
+}
+.ranking-nome-opcao select {
+    background: var(--background-nav);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+
 
 /* Quiz Slide */
 .quiz-section {
